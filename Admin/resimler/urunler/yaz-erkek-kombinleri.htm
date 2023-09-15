@@ -1,0 +1,1224 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head><meta name="viewport" content="initial-scale=1" />
+<meta charset="UTF-8" /><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>class RocketLazyLoadScripts{constructor(){this.triggerEvents=["keydown","mousedown","mousemove","touchmove","touchstart","touchend","wheel"],this.userEventHandler=this._triggerListener.bind(this),this.touchStartHandler=this._onTouchStart.bind(this),this.touchMoveHandler=this._onTouchMove.bind(this),this.touchEndHandler=this._onTouchEnd.bind(this),this.clickHandler=this._onClick.bind(this),this.interceptedClicks=[],window.addEventListener("pageshow",(e=>{this.persisted=e.persisted})),window.addEventListener("DOMContentLoaded",(()=>{this._preconnect3rdParties()})),this.delayedScripts={normal:[],async:[],defer:[]},this.allJQueries=[]}_addUserInteractionListener(e){document.hidden?e._triggerListener():(this.triggerEvents.forEach((t=>window.addEventListener(t,e.userEventHandler,{passive:!0}))),window.addEventListener("touchstart",e.touchStartHandler,{passive:!0}),window.addEventListener("mousedown",e.touchStartHandler),document.addEventListener("visibilitychange",e.userEventHandler))}_removeUserInteractionListener(){this.triggerEvents.forEach((e=>window.removeEventListener(e,this.userEventHandler,{passive:!0}))),document.removeEventListener("visibilitychange",this.userEventHandler)}_onTouchStart(e){"HTML"!==e.target.tagName&&(window.addEventListener("touchend",this.touchEndHandler),window.addEventListener("mouseup",this.touchEndHandler),window.addEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.addEventListener("mousemove",this.touchMoveHandler),e.target.addEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"onclick","rocket-onclick"))}_onTouchMove(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler),e.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"rocket-onclick","onclick")}_onTouchEnd(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler)}_onClick(e){e.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"rocket-onclick","onclick"),this.interceptedClicks.push(e),e.preventDefault(),e.stopPropagation(),e.stopImmediatePropagation()}_replayClicks(){window.removeEventListener("touchstart",this.touchStartHandler,{passive:!0}),window.removeEventListener("mousedown",this.touchStartHandler),this.interceptedClicks.forEach((e=>{e.target.dispatchEvent(new MouseEvent("click",{view:e.view,bubbles:!0,cancelable:!0}))}))}_renameDOMAttribute(e,t,n){e.hasAttribute&&e.hasAttribute(t)&&(event.target.setAttribute(n,event.target.getAttribute(t)),event.target.removeAttribute(t))}_triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}_preconnect3rdParties(){let e=[];document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((t=>{if(t.hasAttribute("src")){const n=new URL(t.src).origin;n!==location.origin&&e.push({src:n,crossOrigin:t.crossOrigin||"module"===t.getAttribute("data-rocket-type")})}})),e=[...new Map(e.map((e=>[JSON.stringify(e),e]))).values()],this._batchInjectResourceHints(e,"preconnect")}async _loadEverythingNow(){this.lastBreath=Date.now(),this._delayEventListeners(),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async);try{await this._triggerDOMContentLoaded(),await this._triggerWindowLoad()}catch(e){}window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this._replayClicks()}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((e=>{e.hasAttribute("src")?e.hasAttribute("async")&&!1!==e.async?this.delayedScripts.async.push(e):e.hasAttribute("defer")&&!1!==e.defer||"module"===e.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(e):this.delayedScripts.normal.push(e):this.delayedScripts.normal.push(e)}))}async _transformScript(e){return await this._littleBreath(),new Promise((t=>{const n=document.createElement("script");[...e.attributes].forEach((e=>{let t=e.nodeName;"type"!==t&&("data-rocket-type"===t&&(t="type"),n.setAttribute(t,e.nodeValue))})),e.hasAttribute("src")?(n.addEventListener("load",t),n.addEventListener("error",t)):(n.text=e.text,t());try{e.parentNode.replaceChild(n,e)}catch(e){t()}}))}async _loadScriptsFromList(e){const t=e.shift();return t?(await this._transformScript(t),this._loadScriptsFromList(e)):Promise.resolve()}_preloadAllScripts(){this._batchInjectResourceHints([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}_batchInjectResourceHints(e,t){var n=document.createDocumentFragment();e.forEach((e=>{if(e.src){const i=document.createElement("link");i.href=e.src,i.rel=t,"preconnect"!==t&&(i.as="script"),e.getAttribute&&"module"===e.getAttribute("data-rocket-type")&&(i.crossOrigin=!0),e.crossOrigin&&(i.crossOrigin=e.crossOrigin),n.appendChild(i)}})),document.head.appendChild(n)}_delayEventListeners(){let e={};function t(t,n){!function(t){function n(n){return e[t].eventsToRewrite.indexOf(n)>=0?"rocket-"+n:n}e[t]||(e[t]={originalFunctions:{add:t.addEventListener,remove:t.removeEventListener},eventsToRewrite:[]},t.addEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.add.apply(t,arguments)},t.removeEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.remove.apply(t,arguments)})}(t),e[t].eventsToRewrite.push(n)}function n(e,t){let n=e[t];Object.defineProperty(e,t,{get:()=>n||function(){},set(i){e["rocket"+t]=n=i}})}t(document,"DOMContentLoaded"),t(window,"DOMContentLoaded"),t(window,"load"),t(window,"pageshow"),t(document,"readystatechange"),n(document,"onreadystatechange"),n(window,"onload"),n(window,"onpageshow")}_delayJQueryReady(e){let t=window.jQuery;Object.defineProperty(window,"jQuery",{get:()=>t,set(n){if(n&&n.fn&&!e.allJQueries.includes(n)){n.fn.ready=n.fn.init.prototype.ready=function(t){e.domReadyFired?t.bind(document)(n):document.addEventListener("rocket-DOMContentLoaded",(()=>t.bind(document)(n)))};const t=n.fn.on;n.fn.on=n.fn.init.prototype.on=function(){if(this[0]===window){function e(e){return e.split(" ").map((e=>"load"===e||0===e.indexOf("load.")?"rocket-jquery-load":e)).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=e(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach((t=>{delete Object.assign(arguments[0],{[e(t)]:arguments[0][t]})[t]}))}return t.apply(this,arguments),this},e.allJQueries.push(n)}t=n}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._littleBreath(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._littleBreath(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._littleBreath(),window.dispatchEvent(new Event("rocket-load")),await this._littleBreath(),window.rocketonload&&window.rocketonload(),await this._littleBreath(),this.allJQueries.forEach((e=>e(window).trigger("rocket-jquery-load"))),await this._littleBreath();const e=new Event("rocket-pageshow");e.persisted=this.persisted,window.dispatchEvent(e),await this._littleBreath(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted})}_handleDocumentWrite(){const e=new Map;document.write=document.writeln=function(t){const n=document.currentScript,i=document.createRange(),r=n.parentElement;let o=e.get(n);void 0===o&&(o=n.nextSibling,e.set(n,o));const s=document.createDocumentFragment();i.setStart(s,0),s.appendChild(i.createContextualFragment(t)),r.insertBefore(s,o)}}async _littleBreath(){Date.now()-this.lastBreath>45&&(await this._requestAnimFrame(),this.lastBreath=Date.now())}async _requestAnimFrame(){return document.hidden?new Promise((e=>setTimeout(e))):new Promise((e=>requestAnimationFrame(e)))}static run(){const e=new RocketLazyLoadScripts;e._addUserInteractionListener(e)}}RocketLazyLoadScripts.run();</script>
+
+
+<!--[if lt IE 9]>
+<script src="https://www.tarzkadin.com/wp-content/themes/safirblog/scripts/html5shiv.js"></script>
+<![endif]-->
+<link rel="shortcut icon" href="https://www.tarzkadin.com/wp-content/uploads/2019/06/tarzkadin1.png" type="image/x-icon">
+<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+	<!-- This site is optimized with the Yoast SEO Premium plugin v20.6 (Yoast SEO v21.1) - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>En Güzel Yaz Erkek Kombinleri - Tarz Kadın</title><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Nunito%3A400%2C400i%2C600%2C700&#038;subset=latin-ext&#038;display=swap" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito%3A400%2C400i%2C600%2C700&#038;subset=latin-ext&#038;display=swap" media="print" onload="this.media='all'" /><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito%3A400%2C400i%2C600%2C700&#038;subset=latin-ext&#038;display=swap" /></noscript>
+	<meta name="description" content="En Güzel Yaz Erkek Kombinleri cool giyim tarzı erkek kreasyonları bünyesinde detaylandırılmıştır. Bu senenin erkek giyim tarzı çerçevesi..." />
+	<link rel="canonical" href="https://www.tarzkadin.com/yaz-erkek-kombinleri" />
+	<meta property="og:locale" content="tr_TR" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="En Güzel Yaz Erkek Kombinleri" />
+	<meta property="og:description" content="En Güzel Yaz Erkek Kombinleri cool giyim tarzı erkek kreasyonları bünyesinde detaylandırılmıştır. Bu senenin erkek giyim tarzı çerçevesi..." />
+	<meta property="og:url" content="https://www.tarzkadin.com/yaz-erkek-kombinleri" />
+	<meta property="og:site_name" content="Tarz Kadın" />
+	<meta property="article:published_time" content="2021-05-21T07:58:01+00:00" />
+	<meta property="article:modified_time" content="2021-05-21T07:57:59+00:00" />
+	<meta property="og:image" content="https://www.tarzkadin.com/wp-content/uploads/2020/06/Yaz-Erkek-Kombinleri-2020.jpg" />
+	<meta property="og:image:width" content="800" />
+	<meta property="og:image:height" content="450" />
+	<meta property="og:image:type" content="image/jpeg" />
+	<meta name="author" content="Emine" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:label1" content="Yazan:" />
+	<meta name="twitter:data1" content="Emine" />
+	<meta name="twitter:label2" content="Tahmini okuma süresi" />
+	<meta name="twitter:data2" content="5 dakika" />
+	<!-- / Yoast SEO Premium plugin. -->
+
+
+<link rel='dns-prefetch' href='//ad.doubleclick.net' />
+<link rel='dns-prefetch' href='//googleads.g.doubleclick.net' />
+<link rel='dns-prefetch' href='//stats.g.doubleclick.net' />
+<link rel='dns-prefetch' href='//cm.g.doubleclick.net' />
+<link rel='dns-prefetch' href='//adservice.google.com' />
+<link rel='dns-prefetch' href='//pagead2.googlesyndication.com' />
+<link rel='dns-prefetch' href='//tpc.googlesyndication.com' />
+<link href='https://fonts.gstatic.com' crossorigin rel='preconnect' />
+<link rel='stylesheet' id='wp-block-library-css' href='https://www.tarzkadin.com/wp-includes/css/dist/block-library/style.min.css'  media='all' />
+<link rel='stylesheet' id='classic-theme-styles-css' href='https://www.tarzkadin.com/wp-includes/css/classic-themes.min.css'  media='all' />
+<style id='global-styles-inline-css' type='text/css'>
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
+</style>
+<link data-minify="1" rel='stylesheet' id='safirstyle-css' href='https://www.tarzkadin.com/wp-content/cache/min/1/wp-content/themes/safirblog/style.css?ver=1693615249'  media='all' />
+<script type="rocketlazyloadscript"  src='https://www.tarzkadin.com/wp-includes/js/jquery/jquery.min.js' id='jquery-core-js' defer></script>
+<script type="rocketlazyloadscript"  src='https://www.tarzkadin.com/wp-includes/js/jquery/jquery-migrate.min.js' id='jquery-migrate-js' defer></script>
+<link rel="https://api.w.org/" href="https://www.tarzkadin.com/wp-json/" /><link rel="alternate" type="application/json" href="https://www.tarzkadin.com/wp-json/wp/v2/posts/21630" /><link rel="alternate" type="application/json+oembed" href="https://www.tarzkadin.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.tarzkadin.com%2Fyaz-erkek-kombinleri" />
+<link rel="alternate" type="text/xml+oembed" href="https://www.tarzkadin.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.tarzkadin.com%2Fyaz-erkek-kombinleri&#038;format=xml" />
+		<script type="rocketlazyloadscript" data-rocket-type="text/javascript" async defer data-pin-color="red" 
+					 data-pin-height="28"  data-pin-hover="true" src="https://www.tarzkadin.com/wp-content/plugins/pinterest-pin-it-button-on-image-hover-and-post/js/pinit.js"></script>
+		
+
+<script type="application/ld+json" class="saswp-schema-markup-output">
+[{"@context":"https://schema.org/","@graph":[{"@context":"https://schema.org/","@type":"SiteNavigationElement","@id":"https://www.tarzkadin.com#Üst","name":"Ana Sayfa","url":"https://www.tarzkadin.com"},{"@context":"https://schema.org/","@type":"SiteNavigationElement","@id":"https://www.tarzkadin.com#Üst","name":"Moda","url":"https://www.tarzkadin.com/moda"},{"@context":"https://schema.org/","@type":"SiteNavigationElement","@id":"https://www.tarzkadin.com#Üst","name":"Kombinler","url":"https://www.tarzkadin.com/moda/kombinler"},{"@context":"https://schema.org/","@type":"SiteNavigationElement","@id":"https://www.tarzkadin.com#Üst","name":"Saç Modelleri","url":"https://www.tarzkadin.com/sac-modelleri"},{"@context":"https://schema.org/","@type":"SiteNavigationElement","@id":"https://www.tarzkadin.com#Üst","name":"Güzellik","url":"https://www.tarzkadin.com/guzellik"},{"@context":"https://schema.org/","@type":"SiteNavigationElement","@id":"https://www.tarzkadin.com#Üst","name":"Erkek","url":"https://www.tarzkadin.com/erkek"},{"@context":"https://schema.org/","@type":"SiteNavigationElement","@id":"https://www.tarzkadin.com#Üst","name":"Kombinler","url":"https://www.tarzkadin.com/erkek/kombinler-erkek"},{"@context":"https://schema.org/","@type":"SiteNavigationElement","@id":"https://www.tarzkadin.com#Üst","name":"Saç Modelleri","url":"https://www.tarzkadin.com/erkek/sac-modelleri-erkek"},{"@context":"https://schema.org/","@type":"SiteNavigationElement","@id":"https://www.tarzkadin.com#Üst","name":"Evlilik Hazırlıkları","url":"https://www.tarzkadin.com/evlilik-hazirliklari"},{"@context":"https://schema.org/","@type":"SiteNavigationElement","@id":"https://www.tarzkadin.com#Üst","name":"Abiye Modelleri","url":"https://www.tarzkadin.com/evlilik-hazirliklari/abiye-modelleri"},{"@context":"https://schema.org/","@type":"SiteNavigationElement","@id":"https://www.tarzkadin.com#Üst","name":"Gelinlik Modelleri","url":"https://www.tarzkadin.com/evlilik-hazirliklari/gelinlik-modelleri"},{"@context":"https://schema.org/","@type":"SiteNavigationElement","@id":"https://www.tarzkadin.com#Üst","name":"Nişan ve Kına Elbiseleri","url":"https://www.tarzkadin.com/evlilik-hazirliklari/nisan-ve-kina-elbiseleri"},{"@context":"https://schema.org/","@type":"SiteNavigationElement","@id":"https://www.tarzkadin.com#Üst","name":"Ev Dekorasyonu","url":"https://www.tarzkadin.com/ev-dekorasyonu"},{"@context":"https://schema.org/","@type":"SiteNavigationElement","@id":"https://www.tarzkadin.com#Üst","name":"Reklam","url":"https://www.tarzkadin.com/reklam"},{"@context":"https://schema.org/","@type":"SiteNavigationElement","@id":"https://www.tarzkadin.com#Üst","name":"Hakkımızda-İletişim","url":"https://www.tarzkadin.com/iletisim"}]},
+
+{"@context":"https://schema.org/","@type":"BreadcrumbList","@id":"https://www.tarzkadin.com/yaz-erkek-kombinleri#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://www.tarzkadin.com","name":"Tarz Kadın"}},{"@type":"ListItem","position":2,"item":{"@id":"https://www.tarzkadin.com/yaz-erkek-kombinleri","name":"En Güzel Yaz Erkek Kombinleri"}}]},
+
+{"@context":"https://schema.org/","@type":"Article","@id":"https://www.tarzkadin.com/yaz-erkek-kombinleri#Article","url":"https://www.tarzkadin.com/yaz-erkek-kombinleri","inLanguage":"tr","mainEntityOfPage":"https://www.tarzkadin.com/yaz-erkek-kombinleri","headline":"En Güzel Yaz Erkek Kombinleri","description":"En Güzel Yaz Erkek Kombinleri cool giyim tarzı erkek kreasyonları bünyesinde detaylandırılmıştır. Bu senenin erkek giyim tarzı çerçevesi...","articleBody":"En Güzel Yaz Erkek Kombinleri cool giyim tarzı erkek kreasyonları bünyesinde detaylandırılmıştır. Bu senenin erkek giyim tarzı çerçevesinde detaylandırdığımız içeriğimizdeki erkek yaz kombinleri 2021-2022 kreasyonlarını inceleyerek daha konforlu ve daha rahat bir yaz sezonu geçirebilirsiniz.    Yaz mevsiminde erkek kombinleri yaparken dikkat etmeniz gereken detaylar vardır. Erkekler bayanlara göre daha çok terlerler. Bu nedenle yaz için erkek kombinleri yaparken dikkat etmeniz gereken ilk kriter hava alan, esnek, rahat ve terletmeyen kıyafetler olmalıdır. Erkekler için yaz kombinleri hakkındaki detayları ve ince nüansları birlikte görelim.  En Güzel Yaz Erkek Kombinleri  Yazlık erkek kombinleri nelerdir? Chino pantolon, tişört, keten şort erkek, keten gömlek erkek, ince jean pantolon erkek, keten blazer ceket erkek, derin sıfır kol atlet erkek, kot ceket erkek, şömiziye yaka kısa kollular, kapri modelleri, kısa kollu gömlekler ve kumaş pantolonlar bulunmaktadır.     Erkek giyim kombin yaz    Beyaz pantolon kombinleri erkek yaz için en ideal pantolon ve kombin rengidir. Ancak kalın dokulu kumaşlar yerine ince Jean beyaz pantolon şeklinde veya beyaz keten pantolon ya da beyaz şort şeklinde tercihlerde bulunabilirsiniz.    Yaz erkek giyim kombinleri bünyesinde kullanacağınız kıyafetler pamuk ve keten karışımlı kumaşlardan üretilmiş olmalıdır. Aşırı dar ve vücudu saran kıyafetler yerine, vücudunuzun hava almasını kolaylaştıracak kapri, şort, gömlek gibi kombin parçalarından yararlanmalısınız.    Yeni sezon erkek kombinleri yazlık moda kombinleri arasında  salaş tişört, salaş gömlek, sporcu atleti gibi salaş yazlık kombinler bulunmaktadır.  Genç Erkek Yaz Kombinleri Nelerdir?  Yazlık kombinler genç: Genç erkek yaz kombinleri arasında daha çok spor kombinler bulunmaktadır. Genç erkek kombinleri bünyesinde yaz döneminde keten şort, tişört, kapri ve sıfır kol atlet kullanımının arttığını görmekteyiz.    Şort-sporcu atlet kombini, şort-tişört kombini, şort-polo yaka kombini, Penye şort-tişört kombini yaz sıcaklarında serinlemenin adresi olan erkek yaz modası arasında yer almaktadır. Şort tercih ederken keten şort veya kot şort kullanmanızı öneriyoruz.     Erkek Yaz Giyim Modelleri    Kargo pantolon tarzı kargo şort modelleri kilolu göstereceği için şişman erkek şort modelleri olarak değilde zayıf erkek şort modelleri olarak kullanılmalıdır.    Tişört-kot pantolon kombini ise günlük erkek kombinleri çerçevesinde her türlü ortamda kullanabileceğiniz erkek kombinleri yaz stilleri olarak karşımıza çıkmaktadır.    Chino pantolon-gömlek kombini ise yaz sıcakları ile baş edebileceğiniz hem tarz hem de şık olmanızı sağlayacak yaz için kombinler arasında yer almaktadır.    Serin yaz akşamları için erkek giyim yaz kombinleri çerçevesinde ceket yok mu diyenlere spor giyim tarzı erkek için blazer ceket ve kot ceket modellerini öneriyoruz. Ceket içine giydiğiniz kombin parçası ile ceket rengi zıt renk uyumu kombinleri şeklinde yapılırsa daha etkili sonuçlar verecektir.    Klasik spor giyim tarzı erkek ise her yaştan erkeğin kullanabileceği geniş bir alana sahiptir. Bu nedenle yazlık erkek kombinleri çerçevesinde her türlü ortama ayak uydurabileceğiniz  klasik spor giyim tarzı tam size göre olabilir.     Yaz için erkek kombinleri  Erkek Yaz Kombinleri Renkleri  Yaz modası erkek renkleri seçilirken ten rengi uyumu asla atlanılmaması gereken bir detaydır. Yeni sezon erkek kombin renkleri kullanılırken zıt renk uyumu ve giyimde renk uyumu kuralları doğrultusunda tercihler yapılmalıdır.    Yeni moda erkek kıyafet renkleri lacivert, haki yeşili, krem renk, Mercan kırmızısı, vizon rengi, beyaz, bej rengi, bebe mavisi, ekru renk, kiraz kırmızısı, mürdüm rengi, pudra rengi, gül kurusu rengi ve ekru renk bulunmaktadır. Ayrıca pas rengi, kül yeşili, gün ışığı rengi ve gri rengi de bu senenin erkek yazlık kıyafet kombinleri renkleri arasında yer almaktadır.    Erkek yaz kombinleri tercihinde bulunurken bu renkleri dikkate alarak seçimler yapmanız daha doğru olacaktır. Yaz için kombin renkleri kullanırken de uyumlu renk kombinasyonları oluşturmaya ve ten renginize uyum sağlayan  erkek tarz kombinleri yapmaya dikkat edin.    Örneğin; kırmızı-beyaz veya krem-bordo ile Ekru renk, krem, vizon rengi ve beyaz, lacivert ile sarı, beyaz, gri ve Ekru renk gibi açık ve koyu renk erkek yaz kombin edebilirsiniz.     Yaz mevsimi erkek kombinleri   Erkekler İçin Yaz Kombinleri Nasıl Yapılır?  Erkek kombilerinde açık renklerde kıyafet kullanırken tarzınıza da önem vermelisiniz.  Erkek giyim tarzına uygun salaş yaz kombinleri, günlük yaz kombinler, yaz Sokak kombinleri, sportif kombinler yaz, yazlık özel gün kombinleri, yaz düğün kombinleri erkek gibi birçok alanda tarz kombinler yapabilirsiniz.    Yaz kombinleri yaparken son derece rahat olmalısınız. Örneğin denim kombinler ile birlikte tişört kullanabilirsiniz. Tişört modelleri ile serin yaz akşamları için blazer ceket kullanabilirsiniz. Keten şort ile birlikte keten gömlek kombini yapabilirsiniz. Tüm bu kombinlerinizde yaz kombinleri için yazlık rahat ayakkabı kullanmalısınız.     Salaş yazlık kombinler-yazlık erkek kombin  Erkek Kombinlerinde Yazın Ne Giyilir?  Bulunduğunuz bölge ve iklim şartlarına göre en uygun erkek tarz kombin parçası seçmelisiniz. Örneğin Antalya’da gündüz ve gece aşırı sıcak olur. Bu nedenle erkek kombin yaz için kombinlerinize ceket dahil etmenize gerek kalmaz. Ancak Konya-Ankara gibi gündüz sıcak akşam serin olan bölgelerde serin yaz akşamları için yaz kombinleri erkek için kombinlerinize mutlaka ceket dahil etmelisiniz.  Resim Galerisi: Erkek Giyim Kombin Yaz  2021-2022 Yaz erkek giyim kombinleri kreasyonlarından seçtiğimiz parçaları daha fazla detay ve fikir için sizlerle paylaşıyoruz. Erkek kombinleri yaz için, bu senenin erkek giyim yaz kombinleri görsellerine yer verdik.        &nbsp;","keywords":"Yaz Erkek Kombinleri, yaz kombinleri erkek, ","datePublished":"2021-05-21T10:58:01+03:00","dateModified":"2021-05-21T10:57:59+03:00","author":{"@type":"Person","name":"Emine","url":"https://www.tarzkadin.com/author/admin","sameAs":[],"image":{"@type":"ImageObject","url":"https://secure.gravatar.com/avatar/00f1b1661b9b569e6225f4b2b6fff35d?s=96&d=mm&r=g","height":96,"width":96}},"editor":{"@type":"Person","name":"Emine","url":"https://www.tarzkadin.com/author/admin","sameAs":[],"image":{"@type":"ImageObject","url":"https://secure.gravatar.com/avatar/00f1b1661b9b569e6225f4b2b6fff35d?s=96&d=mm&r=g","height":96,"width":96}},"publisher":{"@type":"Organization","name":"Tarz Kadın","url":"https://www.tarzkadin.com","logo":{"@type":"ImageObject","url":"https://www.tarzkadin.com/wp-content/uploads/2019/08/tarzkadin1.png","width":"250","height":"60"}},"comment":null,"image":[{"@type":"ImageObject","@id":"https://www.tarzkadin.com/yaz-erkek-kombinleri#primaryimage","url":"https://www.tarzkadin.com/wp-content/uploads/2020/06/Yaz-Erkek-Kombinleri-2020-1200x675.jpg","width":"1200","height":"675","caption":"Yaz Erkek Kombinleri 2020"},{"@type":"ImageObject","url":"https://www.tarzkadin.com/wp-content/uploads/2020/06/Yaz-Erkek-Kombinleri-2020-1200x900.jpg","width":"1200","height":"900","caption":"Yaz Erkek Kombinleri 2020"},{"@type":"ImageObject","url":"https://www.tarzkadin.com/wp-content/uploads/2020/06/Yaz-Erkek-Kombinleri-2020-1200x675.jpg","width":"1200","height":"675","caption":"Yaz Erkek Kombinleri 2020"},{"@type":"ImageObject","url":"https://www.tarzkadin.com/wp-content/uploads/2020/06/Erkek-giyim-kombin-yaz.jpg","width":564,"height":704},{"@type":"ImageObject","url":"https://www.tarzkadin.com/wp-content/uploads/2020/06/Erkek-Yaz-Giyim-Modelleri.jpg","width":564,"height":858,"caption":"Erkek Yaz Giyim Modelleri"},{"@type":"ImageObject","url":"https://www.tarzkadin.com/wp-content/uploads/2020/06/Yaz-için-erkek-kombinleri.jpg","width":564,"height":564},{"@type":"ImageObject","url":"https://www.tarzkadin.com/wp-content/uploads/2020/06/Yaz-mevsimi-erkek-kombinleri.jpg","width":564,"height":837},{"@type":"ImageObject","url":"https://www.tarzkadin.com/wp-content/uploads/2020/06/Salaş-yazlık-kombinler.jpg","width":480,"height":546}]}]
+</script>
+
+<meta name="google-site-verification" content="YeudNDhcL92oWe5J_fGGF45h7XXL4mySstg5JJf_I6Q" /> 
+<script type="rocketlazyloadscript" data-ad-client="ca-pub-4644350651630449" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<meta name="p:domain_verify" content="0172e6058ed82ab07edae507f262683a"/><style>a,.mainHeading .icon:before,.reading ul li:before,.safirBox .post a:hover,.safirBox.post a:hover,.sliderWidget .sfrNav span:before,.safirCustomMenu a .icon:before,.tabbedWidget .tabheading a .icon:before,.tabbedWidget .post .title a:hover,.sfrIconForm .item .icon span:before{color:#334368;}.mainHeading:before,#slider .post .safirCategoryMeta a,.advancedPostsWidget1 .post .detail .safirCategoryMeta a,.advancedPostsWidget3 .post .detail .safirCategoryMeta a,.sliderWidget .post .safirCategoryMeta a,.timelineWidget .post .time,.slidingWidget .post .hover:before,.safirTop,.safirnavi span,.safirnavi a,#gallery-links a,.safirBox .owl-nav div,#main form button.submit,#main form input[type=submit]{background:#334368;}#search .searchButton{color:#f89d41;}footer .footerHeading:before{background:#f89d41;}.sliderWidget .owl-dot.active{border:2px solid #f89d41;background:#f89d41;}.tabbedWidget .tabheading a.active{border-bottom:2px solid #334368;}footer,footer .innerContainer.top,#footerBottom{background:#1b1f29;}#topbar{background:#202530;}#menu li span.icon{color:#202530;}#menu>ul>li:hover>a{border-top:2px solid #f89d41;}#menu .sub-menu{border-bottom:2px solid #f89d41;}footer:before{background:-moz-linear-gradient(left,#1b1f29 0%,#1b1f29 50%,rgba(255,255,255,0.15) 51%,rgba(255,255,255,0.04) 100%);background:-webkit-linear-gradient(left,#1b1f29 0%,#1b1f29 50%,rgba(255,255,255,0.04) 51%,rgba(255,255,255,0.04) 100%);background:linear-gradient(to right,#1b1f29 0%,#1b1f29 50%,rgba(255,255,255,0.04) 51%,rgba(255,255,255,0.04) 100%);}footer.hidden:before{display:none;}footer .footerCols{background:-moz-linear-gradient(left,#1b1f29 0%,#1b1f29 23.75%,rgba(255,255,255,0.04) 23.75%,rgba(255,255,255,0.04) 100%);background:-webkit-linear-gradient(left,#1b1f29 0%,#1b1f29 23.75%,rgba(255,255,255,0.04) 23.75%,rgba(255,255,255,0.04) 100%);background:linear-gradient(to right,#1b1f29 0%,#1b1f29 23.75%,rgba(255,255,255,0.04) 23.75%,rgba(255,255,255,0.04) 100%);}.safirBox.color11 .mainHeading .icon:before,.safirBox.color11 .post a:hover,.safirCustomMenu.color11 a .icon:before,.tabbedWidget .tabheading a.color11 .icon:before,.searchWidget.color11 button:before,.tabbedWidget .tab.color11 .post .title a:hover{color:#f42447 !important;}#slider .post-container .post .safirCategoryMeta a.cat11,.sliderWidget .post .safirCategoryMeta a.cat11,.advancedPostsWidget1 .post .detail .safirCategoryMeta a.cat11,.safirBox.color11 .mainHeading:before,.slidingWidget.color11 .post .hover:before,.safirBox.color11 .owl-nav div,.advancedPostsWidget3 .post .detail .safirCategoryMeta a.cat11,.timelineWidget.color11 .post .time,.advancedPostsWidget2 .sfrCatClr.cat11,.listingWidget.color11 .items a .number,.advancedPostsWidget1.color11 .post .title:before,.advancedPostsWidget4.color11 .post a.more,.advancedPostsWidget5.color11 .post .title:before,.advancedPostsWidget5.color11 .titles .title.active a,.fiveWidget.color11 .leftSide .post .title:before,.commentsWidget.color11 .item .title:before,.safirBox.color11 .safirnavi span,.safirBox.color11 .safirnavi a,.searchWidget.color11 form:before{background:#f42447;}.tabbedWidget .tabheading a.color11.active{border-color:#f42447;}.safirBox.color3 .mainHeading .icon:before,.safirBox.color3 .post a:hover,.safirCustomMenu.color3 a .icon:before,.tabbedWidget .tabheading a.color3 .icon:before,.searchWidget.color3 button:before,.tabbedWidget .tab.color3 .post .title a:hover{color:#f42447 !important;}#slider .post-container .post .safirCategoryMeta a.cat3,.sliderWidget .post .safirCategoryMeta a.cat3,.advancedPostsWidget1 .post .detail .safirCategoryMeta a.cat3,.safirBox.color3 .mainHeading:before,.slidingWidget.color3 .post .hover:before,.safirBox.color3 .owl-nav div,.advancedPostsWidget3 .post .detail .safirCategoryMeta a.cat3,.timelineWidget.color3 .post .time,.advancedPostsWidget2 .sfrCatClr.cat3,.listingWidget.color3 .items a .number,.advancedPostsWidget1.color3 .post .title:before,.advancedPostsWidget4.color3 .post a.more,.advancedPostsWidget5.color3 .post .title:before,.advancedPostsWidget5.color3 .titles .title.active a,.fiveWidget.color3 .leftSide .post .title:before,.commentsWidget.color3 .item .title:before,.safirBox.color3 .safirnavi span,.safirBox.color3 .safirnavi a,.searchWidget.color3 form:before{background:#f42447;}.tabbedWidget .tabheading a.color3.active{border-color:#f42447;}.safirBox.color5 .mainHeading .icon:before,.safirBox.color5 .post a:hover,.safirCustomMenu.color5 a .icon:before,.tabbedWidget .tabheading a.color5 .icon:before,.searchWidget.color5 button:before,.tabbedWidget .tab.color5 .post .title a:hover{color:#f42447 !important;}#slider .post-container .post .safirCategoryMeta a.cat5,.sliderWidget .post .safirCategoryMeta a.cat5,.advancedPostsWidget1 .post .detail .safirCategoryMeta a.cat5,.safirBox.color5 .mainHeading:before,.slidingWidget.color5 .post .hover:before,.safirBox.color5 .owl-nav div,.advancedPostsWidget3 .post .detail .safirCategoryMeta a.cat5,.timelineWidget.color5 .post .time,.advancedPostsWidget2 .sfrCatClr.cat5,.listingWidget.color5 .items a .number,.advancedPostsWidget1.color5 .post .title:before,.advancedPostsWidget4.color5 .post a.more,.advancedPostsWidget5.color5 .post .title:before,.advancedPostsWidget5.color5 .titles .title.active a,.fiveWidget.color5 .leftSide .post .title:before,.commentsWidget.color5 .item .title:before,.safirBox.color5 .safirnavi span,.safirBox.color5 .safirnavi a,.searchWidget.color5 form:before{background:#f42447;}.tabbedWidget .tabheading a.color5.active{border-color:#f42447;}.safirBox.color12 .mainHeading .icon:before,.safirBox.color12 .post a:hover,.safirCustomMenu.color12 a .icon:before,.tabbedWidget .tabheading a.color12 .icon:before,.searchWidget.color12 button:before,.tabbedWidget .tab.color12 .post .title a:hover{color:#f42447 !important;}#slider .post-container .post .safirCategoryMeta a.cat12,.sliderWidget .post .safirCategoryMeta a.cat12,.advancedPostsWidget1 .post .detail .safirCategoryMeta a.cat12,.safirBox.color12 .mainHeading:before,.slidingWidget.color12 .post .hover:before,.safirBox.color12 .owl-nav div,.advancedPostsWidget3 .post .detail .safirCategoryMeta a.cat12,.timelineWidget.color12 .post .time,.advancedPostsWidget2 .sfrCatClr.cat12,.listingWidget.color12 .items a .number,.advancedPostsWidget1.color12 .post .title:before,.advancedPostsWidget4.color12 .post a.more,.advancedPostsWidget5.color12 .post .title:before,.advancedPostsWidget5.color12 .titles .title.active a,.fiveWidget.color12 .leftSide .post .title:before,.commentsWidget.color12 .item .title:before,.safirBox.color12 .safirnavi span,.safirBox.color12 .safirnavi a,.searchWidget.color12 form:before{background:#f42447;}.tabbedWidget .tabheading a.color12.active{border-color:#f42447;}.safirBox.color8 .mainHeading .icon:before,.safirBox.color8 .post a:hover,.safirCustomMenu.color8 a .icon:before,.tabbedWidget .tabheading a.color8 .icon:before,.searchWidget.color8 button:before,.tabbedWidget .tab.color8 .post .title a:hover{color:#f42447 !important;}#slider .post-container .post .safirCategoryMeta a.cat8,.sliderWidget .post .safirCategoryMeta a.cat8,.advancedPostsWidget1 .post .detail .safirCategoryMeta a.cat8,.safirBox.color8 .mainHeading:before,.slidingWidget.color8 .post .hover:before,.safirBox.color8 .owl-nav div,.advancedPostsWidget3 .post .detail .safirCategoryMeta a.cat8,.timelineWidget.color8 .post .time,.advancedPostsWidget2 .sfrCatClr.cat8,.listingWidget.color8 .items a .number,.advancedPostsWidget1.color8 .post .title:before,.advancedPostsWidget4.color8 .post a.more,.advancedPostsWidget5.color8 .post .title:before,.advancedPostsWidget5.color8 .titles .title.active a,.fiveWidget.color8 .leftSide .post .title:before,.commentsWidget.color8 .item .title:before,.safirBox.color8 .safirnavi span,.safirBox.color8 .safirnavi a,.searchWidget.color8 form:before{background:#f42447;}.tabbedWidget .tabheading a.color8.active{border-color:#f42447;}.safirBox.color14 .mainHeading .icon:before,.safirBox.color14 .post a:hover,.safirCustomMenu.color14 a .icon:before,.tabbedWidget .tabheading a.color14 .icon:before,.searchWidget.color14 button:before,.tabbedWidget .tab.color14 .post .title a:hover{color:#f42447 !important;}#slider .post-container .post .safirCategoryMeta a.cat14,.sliderWidget .post .safirCategoryMeta a.cat14,.advancedPostsWidget1 .post .detail .safirCategoryMeta a.cat14,.safirBox.color14 .mainHeading:before,.slidingWidget.color14 .post .hover:before,.safirBox.color14 .owl-nav div,.advancedPostsWidget3 .post .detail .safirCategoryMeta a.cat14,.timelineWidget.color14 .post .time,.advancedPostsWidget2 .sfrCatClr.cat14,.listingWidget.color14 .items a .number,.advancedPostsWidget1.color14 .post .title:before,.advancedPostsWidget4.color14 .post a.more,.advancedPostsWidget5.color14 .post .title:before,.advancedPostsWidget5.color14 .titles .title.active a,.fiveWidget.color14 .leftSide .post .title:before,.commentsWidget.color14 .item .title:before,.safirBox.color14 .safirnavi span,.safirBox.color14 .safirnavi a,.searchWidget.color14 form:before{background:#f42447;}.tabbedWidget .tabheading a.color14.active{border-color:#f42447;}.safirBox.color9 .mainHeading .icon:before,.safirBox.color9 .post a:hover,.safirCustomMenu.color9 a .icon:before,.tabbedWidget .tabheading a.color9 .icon:before,.searchWidget.color9 button:before,.tabbedWidget .tab.color9 .post .title a:hover{color:#f42447 !important;}#slider .post-container .post .safirCategoryMeta a.cat9,.sliderWidget .post .safirCategoryMeta a.cat9,.advancedPostsWidget1 .post .detail .safirCategoryMeta a.cat9,.safirBox.color9 .mainHeading:before,.slidingWidget.color9 .post .hover:before,.safirBox.color9 .owl-nav div,.advancedPostsWidget3 .post .detail .safirCategoryMeta a.cat9,.timelineWidget.color9 .post .time,.advancedPostsWidget2 .sfrCatClr.cat9,.listingWidget.color9 .items a .number,.advancedPostsWidget1.color9 .post .title:before,.advancedPostsWidget4.color9 .post a.more,.advancedPostsWidget5.color9 .post .title:before,.advancedPostsWidget5.color9 .titles .title.active a,.fiveWidget.color9 .leftSide .post .title:before,.commentsWidget.color9 .item .title:before,.safirBox.color9 .safirnavi span,.safirBox.color9 .safirnavi a,.searchWidget.color9 form:before{background:#f42447;}.tabbedWidget .tabheading a.color9.active{border-color:#f42447;}.safirBox.color1813 .mainHeading .icon:before,.safirBox.color1813 .post a:hover,.safirCustomMenu.color1813 a .icon:before,.tabbedWidget .tabheading a.color1813 .icon:before,.searchWidget.color1813 button:before,.tabbedWidget .tab.color1813 .post .title a:hover{color:#f42447 !important;}#slider .post-container .post .safirCategoryMeta a.cat1813,.sliderWidget .post .safirCategoryMeta a.cat1813,.advancedPostsWidget1 .post .detail .safirCategoryMeta a.cat1813,.safirBox.color1813 .mainHeading:before,.slidingWidget.color1813 .post .hover:before,.safirBox.color1813 .owl-nav div,.advancedPostsWidget3 .post .detail .safirCategoryMeta a.cat1813,.timelineWidget.color1813 .post .time,.advancedPostsWidget2 .sfrCatClr.cat1813,.listingWidget.color1813 .items a .number,.advancedPostsWidget1.color1813 .post .title:before,.advancedPostsWidget4.color1813 .post a.more,.advancedPostsWidget5.color1813 .post .title:before,.advancedPostsWidget5.color1813 .titles .title.active a,.fiveWidget.color1813 .leftSide .post .title:before,.commentsWidget.color1813 .item .title:before,.safirBox.color1813 .safirnavi span,.safirBox.color1813 .safirnavi a,.searchWidget.color1813 form:before{background:#f42447;}.tabbedWidget .tabheading a.color1813.active{border-color:#f42447;}.safirBox.color13 .mainHeading .icon:before,.safirBox.color13 .post a:hover,.safirCustomMenu.color13 a .icon:before,.tabbedWidget .tabheading a.color13 .icon:before,.searchWidget.color13 button:before,.tabbedWidget .tab.color13 .post .title a:hover{color:#f42447 !important;}#slider .post-container .post .safirCategoryMeta a.cat13,.sliderWidget .post .safirCategoryMeta a.cat13,.advancedPostsWidget1 .post .detail .safirCategoryMeta a.cat13,.safirBox.color13 .mainHeading:before,.slidingWidget.color13 .post .hover:before,.safirBox.color13 .owl-nav div,.advancedPostsWidget3 .post .detail .safirCategoryMeta a.cat13,.timelineWidget.color13 .post .time,.advancedPostsWidget2 .sfrCatClr.cat13,.listingWidget.color13 .items a .number,.advancedPostsWidget1.color13 .post .title:before,.advancedPostsWidget4.color13 .post a.more,.advancedPostsWidget5.color13 .post .title:before,.advancedPostsWidget5.color13 .titles .title.active a,.fiveWidget.color13 .leftSide .post .title:before,.commentsWidget.color13 .item .title:before,.safirBox.color13 .safirnavi span,.safirBox.color13 .safirnavi a,.searchWidget.color13 form:before{background:#f42447;}.tabbedWidget .tabheading a.color13.active{border-color:#f42447;}.safirBox.color2 .mainHeading .icon:before,.safirBox.color2 .post a:hover,.safirCustomMenu.color2 a .icon:before,.tabbedWidget .tabheading a.color2 .icon:before,.searchWidget.color2 button:before,.tabbedWidget .tab.color2 .post .title a:hover{color:#f42447 !important;}#slider .post-container .post .safirCategoryMeta a.cat2,.sliderWidget .post .safirCategoryMeta a.cat2,.advancedPostsWidget1 .post .detail .safirCategoryMeta a.cat2,.safirBox.color2 .mainHeading:before,.slidingWidget.color2 .post .hover:before,.safirBox.color2 .owl-nav div,.advancedPostsWidget3 .post .detail .safirCategoryMeta a.cat2,.timelineWidget.color2 .post .time,.advancedPostsWidget2 .sfrCatClr.cat2,.listingWidget.color2 .items a .number,.advancedPostsWidget1.color2 .post .title:before,.advancedPostsWidget4.color2 .post a.more,.advancedPostsWidget5.color2 .post .title:before,.advancedPostsWidget5.color2 .titles .title.active a,.fiveWidget.color2 .leftSide .post .title:before,.commentsWidget.color2 .item .title:before,.safirBox.color2 .safirnavi span,.safirBox.color2 .safirnavi a,.searchWidget.color2 form:before{background:#f42447;}.tabbedWidget .tabheading a.color2.active{border-color:#f42447;}.safirBox.color7 .mainHeading .icon:before,.safirBox.color7 .post a:hover,.safirCustomMenu.color7 a .icon:before,.tabbedWidget .tabheading a.color7 .icon:before,.searchWidget.color7 button:before,.tabbedWidget .tab.color7 .post .title a:hover{color:#f42447 !important;}#slider .post-container .post .safirCategoryMeta a.cat7,.sliderWidget .post .safirCategoryMeta a.cat7,.advancedPostsWidget1 .post .detail .safirCategoryMeta a.cat7,.safirBox.color7 .mainHeading:before,.slidingWidget.color7 .post .hover:before,.safirBox.color7 .owl-nav div,.advancedPostsWidget3 .post .detail .safirCategoryMeta a.cat7,.timelineWidget.color7 .post .time,.advancedPostsWidget2 .sfrCatClr.cat7,.listingWidget.color7 .items a .number,.advancedPostsWidget1.color7 .post .title:before,.advancedPostsWidget4.color7 .post a.more,.advancedPostsWidget5.color7 .post .title:before,.advancedPostsWidget5.color7 .titles .title.active a,.fiveWidget.color7 .leftSide .post .title:before,.commentsWidget.color7 .item .title:before,.safirBox.color7 .safirnavi span,.safirBox.color7 .safirnavi a,.searchWidget.color7 form:before{background:#f42447;}.tabbedWidget .tabheading a.color7.active{border-color:#f42447;}.safirBox.color1 .mainHeading .icon:before,.safirBox.color1 .post a:hover,.safirCustomMenu.color1 a .icon:before,.tabbedWidget .tabheading a.color1 .icon:before,.searchWidget.color1 button:before,.tabbedWidget .tab.color1 .post .title a:hover{color:#f42447 !important;}#slider .post-container .post .safirCategoryMeta a.cat1,.sliderWidget .post .safirCategoryMeta a.cat1,.advancedPostsWidget1 .post .detail .safirCategoryMeta a.cat1,.safirBox.color1 .mainHeading:before,.slidingWidget.color1 .post .hover:before,.safirBox.color1 .owl-nav div,.advancedPostsWidget3 .post .detail .safirCategoryMeta a.cat1,.timelineWidget.color1 .post .time,.advancedPostsWidget2 .sfrCatClr.cat1,.listingWidget.color1 .items a .number,.advancedPostsWidget1.color1 .post .title:before,.advancedPostsWidget4.color1 .post a.more,.advancedPostsWidget5.color1 .post .title:before,.advancedPostsWidget5.color1 .titles .title.active a,.fiveWidget.color1 .leftSide .post .title:before,.commentsWidget.color1 .item .title:before,.safirBox.color1 .safirnavi span,.safirBox.color1 .safirnavi a,.searchWidget.color1 form:before{background:#f42447;}.tabbedWidget .tabheading a.color1.active{border-color:#f42447;}.safirBox.color10 .mainHeading .icon:before,.safirBox.color10 .post a:hover,.safirCustomMenu.color10 a .icon:before,.tabbedWidget .tabheading a.color10 .icon:before,.searchWidget.color10 button:before,.tabbedWidget .tab.color10 .post .title a:hover{color:#f42447 !important;}#slider .post-container .post .safirCategoryMeta a.cat10,.sliderWidget .post .safirCategoryMeta a.cat10,.advancedPostsWidget1 .post .detail .safirCategoryMeta a.cat10,.safirBox.color10 .mainHeading:before,.slidingWidget.color10 .post .hover:before,.safirBox.color10 .owl-nav div,.advancedPostsWidget3 .post .detail .safirCategoryMeta a.cat10,.timelineWidget.color10 .post .time,.advancedPostsWidget2 .sfrCatClr.cat10,.listingWidget.color10 .items a .number,.advancedPostsWidget1.color10 .post .title:before,.advancedPostsWidget4.color10 .post a.more,.advancedPostsWidget5.color10 .post .title:before,.advancedPostsWidget5.color10 .titles .title.active a,.fiveWidget.color10 .leftSide .post .title:before,.commentsWidget.color10 .item .title:before,.safirBox.color10 .safirnavi span,.safirBox.color10 .safirnavi a,.searchWidget.color10 form:before{background:#f42447;}.tabbedWidget .tabheading a.color10.active{border-color:#f42447;}.safirBox.color4 .mainHeading .icon:before,.safirBox.color4 .post a:hover,.safirCustomMenu.color4 a .icon:before,.tabbedWidget .tabheading a.color4 .icon:before,.searchWidget.color4 button:before,.tabbedWidget .tab.color4 .post .title a:hover{color:#f42447 !important;}#slider .post-container .post .safirCategoryMeta a.cat4,.sliderWidget .post .safirCategoryMeta a.cat4,.advancedPostsWidget1 .post .detail .safirCategoryMeta a.cat4,.safirBox.color4 .mainHeading:before,.slidingWidget.color4 .post .hover:before,.safirBox.color4 .owl-nav div,.advancedPostsWidget3 .post .detail .safirCategoryMeta a.cat4,.timelineWidget.color4 .post .time,.advancedPostsWidget2 .sfrCatClr.cat4,.listingWidget.color4 .items a .number,.advancedPostsWidget1.color4 .post .title:before,.advancedPostsWidget4.color4 .post a.more,.advancedPostsWidget5.color4 .post .title:before,.advancedPostsWidget5.color4 .titles .title.active a,.fiveWidget.color4 .leftSide .post .title:before,.commentsWidget.color4 .item .title:before,.safirBox.color4 .safirnavi span,.safirBox.color4 .safirnavi a,.searchWidget.color4 form:before{background:#f42447;}.tabbedWidget .tabheading a.color4.active{border-color:#f42447;}.safirBox.color6 .mainHeading .icon:before,.safirBox.color6 .post a:hover,.safirCustomMenu.color6 a .icon:before,.tabbedWidget .tabheading a.color6 .icon:before,.searchWidget.color6 button:before,.tabbedWidget .tab.color6 .post .title a:hover{color:#f42447 !important;}#slider .post-container .post .safirCategoryMeta a.cat6,.sliderWidget .post .safirCategoryMeta a.cat6,.advancedPostsWidget1 .post .detail .safirCategoryMeta a.cat6,.safirBox.color6 .mainHeading:before,.slidingWidget.color6 .post .hover:before,.safirBox.color6 .owl-nav div,.advancedPostsWidget3 .post .detail .safirCategoryMeta a.cat6,.timelineWidget.color6 .post .time,.advancedPostsWidget2 .sfrCatClr.cat6,.listingWidget.color6 .items a .number,.advancedPostsWidget1.color6 .post .title:before,.advancedPostsWidget4.color6 .post a.more,.advancedPostsWidget5.color6 .post .title:before,.advancedPostsWidget5.color6 .titles .title.active a,.fiveWidget.color6 .leftSide .post .title:before,.commentsWidget.color6 .item .title:before,.safirBox.color6 .safirnavi span,.safirBox.color6 .safirnavi a,.searchWidget.color6 form:before{background:#f42447;}.tabbedWidget .tabheading a.color6.active{border-color:#f42447;}#menu li.ev>a span.icon:before{content:'\E010';display:inline-block;}.safirCustomMenu li.ev .icon:before,#mobilemenu li.ev>a>span.icon:before{content:'\E010';display:block;}.slidingWidget.withIcon.ev .hover span:before,.mainHeading .icon.ev:before,.tabbedWidget .tabheading a .icon.ev:before,footer .footermenu2 li.ev a:before{content:'\E010';}#menu li.power>a span.icon:before{content:'\E000';display:inline-block;}.safirCustomMenu li.power .icon:before,#mobilemenu li.power>a>span.icon:before{content:'\E000';display:block;}.slidingWidget.withIcon.power .hover span:before,.mainHeading .icon.power:before,.tabbedWidget .tabheading a .icon.power:before,footer .footermenu2 li.power a:before{content:'\E000';}#menu li.yaprak>a span.icon:before{content:'\E002';display:inline-block;}.safirCustomMenu li.yaprak .icon:before,#mobilemenu li.yaprak>a>span.icon:before{content:'\E002';display:block;}.slidingWidget.withIcon.yaprak .hover span:before,.mainHeading .icon.yaprak:before,.tabbedWidget .tabheading a .icon.yaprak:before,footer .footermenu2 li.yaprak a:before{content:'\E002';}#menu li.yemek>a span.icon:before{content:'\E003';display:inline-block;}.safirCustomMenu li.yemek .icon:before,#mobilemenu li.yemek>a>span.icon:before{content:'\E003';display:block;}.slidingWidget.withIcon.yemek .hover span:before,.mainHeading .icon.yemek:before,.tabbedWidget .tabheading a .icon.yemek:before,footer .footermenu2 li.yemek a:before{content:'\E003';}#menu li.egitim>a span.icon:before{content:'\E005';display:inline-block;}.safirCustomMenu li.egitim .icon:before,#mobilemenu li.egitim>a>span.icon:before{content:'\E005';display:block;}.slidingWidget.withIcon.egitim .hover span:before,.mainHeading .icon.egitim:before,.tabbedWidget .tabheading a .icon.egitim:before,footer .footermenu2 li.egitim a:before{content:'\E005';}#menu li.araba>a span.icon:before{content:'\E006';display:inline-block;}.safirCustomMenu li.araba .icon:before,#mobilemenu li.araba>a>span.icon:before{content:'\E006';display:block;}.slidingWidget.withIcon.araba .hover span:before,.mainHeading .icon.araba:before,.tabbedWidget .tabheading a .icon.araba:before,footer .footermenu2 li.araba a:before{content:'\E006';}#menu li.bilgi>a span.icon:before{content:'\E007';display:inline-block;}.safirCustomMenu li.bilgi .icon:before,#mobilemenu li.bilgi>a>span.icon:before{content:'\E007';display:block;}.slidingWidget.withIcon.bilgi .hover span:before,.mainHeading .icon.bilgi:before,.tabbedWidget .tabheading a .icon.bilgi:before,footer .footermenu2 li.bilgi a:before{content:'\E007';}#menu li.nota>a span.icon:before{content:'\E009';display:inline-block;}.safirCustomMenu li.nota .icon:before,#mobilemenu li.nota>a>span.icon:before{content:'\E009';display:block;}.slidingWidget.withIcon.nota .hover span:before,.mainHeading .icon.nota:before,.tabbedWidget .tabheading a .icon.nota:before,footer .footermenu2 li.nota a:before{content:'\E009';}#menu li.kadin>a span.icon:before{content:'\E00A';display:inline-block;}.safirCustomMenu li.kadin .icon:before,#mobilemenu li.kadin>a>span.icon:before{content:'\E00A';display:block;}.slidingWidget.withIcon.kadin .hover span:before,.mainHeading .icon.kadin:before,.tabbedWidget .tabheading a .icon.kadin:before,footer .footermenu2 li.kadin a:before{content:'\E00A';}#menu li.kalp>a span.icon:before{content:'\E00B';display:inline-block;}.safirCustomMenu li.kalp .icon:before,#mobilemenu li.kalp>a>span.icon:before{content:'\E00B';display:block;}.slidingWidget.withIcon.kalp .hover span:before,.mainHeading .icon.kalp:before,.tabbedWidget .tabheading a .icon.kalp:before,footer .footermenu2 li.kalp a:before{content:'\E00B';}#menu li.kitap>a span.icon:before{content:'\E00C';display:inline-block;}.safirCustomMenu li.kitap .icon:before,#mobilemenu li.kitap>a>span.icon:before{content:'\E00C';display:block;}.slidingWidget.withIcon.kitap .hover span:before,.mainHeading .icon.kitap:before,.tabbedWidget .tabheading a .icon.kitap:before,footer .footermenu2 li.kitap a:before{content:'\E00C';}#menu li.kullanici>a span.icon:before{content:'\E00F';display:inline-block;}.safirCustomMenu li.kullanici .icon:before,#mobilemenu li.kullanici>a>span.icon:before{content:'\E00F';display:block;}.slidingWidget.withIcon.kullanici .hover span:before,.mainHeading .icon.kullanici:before,.tabbedWidget .tabheading a .icon.kullanici:before,footer .footermenu2 li.kullanici a:before{content:'\E00F';}#menu li.alinti>a span.icon:before{content:'\E011';display:inline-block;}.safirCustomMenu li.alinti .icon:before,#mobilemenu li.alinti>a>span.icon:before{content:'\E011';display:block;}.slidingWidget.withIcon.alinti .hover span:before,.mainHeading .icon.alinti:before,.tabbedWidget .tabheading a .icon.alinti:before,footer .footermenu2 li.alinti a:before{content:'\E011';}#menu li.tamir>a span.icon:before{content:'\E013';display:inline-block;}.safirCustomMenu li.tamir .icon:before,#mobilemenu li.tamir>a>span.icon:before{content:'\E013';display:block;}.slidingWidget.withIcon.tamir .hover span:before,.mainHeading .icon.tamir:before,.tabbedWidget .tabheading a .icon.tamir:before,footer .footermenu2 li.tamir a:before{content:'\E013';}#menu li.ucak>a span.icon:before{content:'\E014';display:inline-block;}.safirCustomMenu li.ucak .icon:before,#mobilemenu li.ucak>a>span.icon:before{content:'\E014';display:block;}.slidingWidget.withIcon.ucak .hover span:before,.mainHeading .icon.ucak:before,.tabbedWidget .tabheading a .icon.ucak:before,footer .footermenu2 li.ucak a:before{content:'\E014';}#menu li.mercek>a span.icon:before{content:'\E028';display:inline-block;}.safirCustomMenu li.mercek .icon:before,#mobilemenu li.mercek>a>span.icon:before{content:'\E028';display:block;}.slidingWidget.withIcon.mercek .hover span:before,.mainHeading .icon.mercek:before,.tabbedWidget .tabheading a .icon.mercek:before,footer .footermenu2 li.mercek a:before{content:'\E028';}#menu li.at>a span.icon:before{content:'\E017';display:inline-block;}.safirCustomMenu li.at .icon:before,#mobilemenu li.at>a>span.icon:before{content:'\E017';display:block;}.slidingWidget.withIcon.at .hover span:before,.mainHeading .icon.at:before,.tabbedWidget .tabheading a .icon.at:before,footer .footermenu2 li.at a:before{content:'\E017';}#menu li.yildiz>a span.icon:before{content:'\E018';display:inline-block;}.safirCustomMenu li.yildiz .icon:before,#mobilemenu li.yildiz>a>span.icon:before{content:'\E018';display:block;}.slidingWidget.withIcon.yildiz .hover span:before,.mainHeading .icon.yildiz:before,.tabbedWidget .tabheading a .icon.yildiz:before,footer .footermenu2 li.yildiz a:before{content:'\E018';}#menu li.whatsapp>a span.icon:before{content:'\E019';display:inline-block;}.safirCustomMenu li.whatsapp .icon:before,#mobilemenu li.whatsapp>a>span.icon:before{content:'\E019';display:block;}.slidingWidget.withIcon.whatsapp .hover span:before,.mainHeading .icon.whatsapp:before,.tabbedWidget .tabheading a .icon.whatsapp:before,footer .footermenu2 li.whatsapp a:before{content:'\E019';}#menu li.mouse>a span.icon:before{content:'\E01A';display:inline-block;}.safirCustomMenu li.mouse .icon:before,#mobilemenu li.mouse>a>span.icon:before{content:'\E01A';display:block;}.slidingWidget.withIcon.mouse .hover span:before,.mainHeading .icon.mouse:before,.tabbedWidget .tabheading a .icon.mouse:before,footer .footermenu2 li.mouse a:before{content:'\E01A';}#menu li.ceptelefonu>a span.icon:before{content:'\E049';display:inline-block;}.safirCustomMenu li.ceptelefonu .icon:before,#mobilemenu li.ceptelefonu>a>span.icon:before{content:'\E049';display:block;}.slidingWidget.withIcon.ceptelefonu .hover span:before,.mainHeading .icon.ceptelefonu:before,.tabbedWidget .tabheading a .icon.ceptelefonu:before,footer .footermenu2 li.ceptelefonu a:before{content:'\E049';}#menu li.monitor>a span.icon:before{content:'\E01B';display:inline-block;}.safirCustomMenu li.monitor .icon:before,#mobilemenu li.monitor>a>span.icon:before{content:'\E01B';display:block;}.slidingWidget.withIcon.monitor .hover span:before,.mainHeading .icon.monitor:before,.tabbedWidget .tabheading a .icon.monitor:before,footer .footermenu2 li.monitor a:before{content:'\E01B';}#menu li.dunya>a span.icon:before{content:'\E01C';display:inline-block;}.safirCustomMenu li.dunya .icon:before,#mobilemenu li.dunya>a>span.icon:before{content:'\E01C';display:block;}.slidingWidget.withIcon.dunya .hover span:before,.mainHeading .icon.dunya:before,.tabbedWidget .tabheading a .icon.dunya:before,footer .footermenu2 li.dunya a:before{content:'\E01C';}#menu li.canta>a span.icon:before{content:'\E01E';display:inline-block;}.safirCustomMenu li.canta .icon:before,#mobilemenu li.canta>a>span.icon:before{content:'\E01E';display:block;}.slidingWidget.withIcon.canta .hover span:before,.mainHeading .icon.canta:before,.tabbedWidget .tabheading a .icon.canta:before,footer .footermenu2 li.canta a:before{content:'\E01E';}#menu li.gulenyuz>a span.icon:before{content:'\E01F';display:inline-block;}.safirCustomMenu li.gulenyuz .icon:before,#mobilemenu li.gulenyuz>a>span.icon:before{content:'\E01F';display:block;}.slidingWidget.withIcon.gulenyuz .hover span:before,.mainHeading .icon.gulenyuz:before,.tabbedWidget .tabheading a .icon.gulenyuz:before,footer .footermenu2 li.gulenyuz a:before{content:'\E01F';}#menu li.soru>a span.icon:before{content:'\E020';display:inline-block;}.safirCustomMenu li.soru .icon:before,#mobilemenu li.soru>a>span.icon:before{content:'\E020';display:block;}.slidingWidget.withIcon.soru .hover span:before,.mainHeading .icon.soru:before,.tabbedWidget .tabheading a .icon.soru:before,footer .footermenu2 li.soru a:before{content:'\E020';}#menu li.duyuru>a span.icon:before{content:'\E022';display:inline-block;}.safirCustomMenu li.duyuru .icon:before,#mobilemenu li.duyuru>a>span.icon:before{content:'\E022';display:block;}.slidingWidget.withIcon.duyuru .hover span:before,.mainHeading .icon.duyuru:before,.tabbedWidget .tabheading a .icon.duyuru:before,footer .footermenu2 li.duyuru a:before{content:'\E022';}#menu li.saat>a span.icon:before{content:'\E023';display:inline-block;}.safirCustomMenu li.saat .icon:before,#mobilemenu li.saat>a>span.icon:before{content:'\E023';display:block;}.slidingWidget.withIcon.saat .hover span:before,.mainHeading .icon.saat:before,.tabbedWidget .tabheading a .icon.saat:before,footer .footermenu2 li.saat a:before{content:'\E023';}#menu li.yorum>a span.icon:before{content:'\E008';display:inline-block;}.safirCustomMenu li.yorum .icon:before,#mobilemenu li.yorum>a>span.icon:before{content:'\E008';display:block;}.slidingWidget.withIcon.yorum .hover span:before,.mainHeading .icon.yorum:before,.tabbedWidget .tabheading a .icon.yorum:before,footer .footermenu2 li.yorum a:before{content:'\E008';}#menu li.takvim>a span.icon:before{content:'\E025';display:inline-block;}.safirCustomMenu li.takvim .icon:before,#mobilemenu li.takvim>a>span.icon:before{content:'\E025';display:block;}.slidingWidget.withIcon.takvim .hover span:before,.mainHeading .icon.takvim:before,.tabbedWidget .tabheading a .icon.takvim:before,footer .footermenu2 li.takvim a:before{content:'\E025';}#menu li.ok>a span.icon:before{content:'\E027';display:inline-block;}.safirCustomMenu li.ok .icon:before,#mobilemenu li.ok>a>span.icon:before{content:'\E027';display:block;}.slidingWidget.withIcon.ok .hover span:before,.mainHeading .icon.ok:before,.tabbedWidget .tabheading a .icon.ok:before,footer .footermenu2 li.ok a:before{content:'\E027';}#menu li.kalem>a span.icon:before{content:'\E029';display:inline-block;}.safirCustomMenu li.kalem .icon:before,#mobilemenu li.kalem>a>span.icon:before{content:'\E029';display:block;}.slidingWidget.withIcon.kalem .hover span:before,.mainHeading .icon.kalem:before,.tabbedWidget .tabheading a .icon.kalem:before,footer .footermenu2 li.kalem a:before{content:'\E029';}#menu li.rastgele>a span.icon:before{content:'\E031';display:inline-block;}.safirCustomMenu li.rastgele .icon:before,#mobilemenu li.rastgele>a>span.icon:before{content:'\E031';display:block;}.slidingWidget.withIcon.rastgele .hover span:before,.mainHeading .icon.rastgele:before,.tabbedWidget .tabheading a .icon.rastgele:before,footer .footermenu2 li.rastgele a:before{content:'\E031';}#menu li.ayar>a span.icon:before{content:'\E032';display:inline-block;}.safirCustomMenu li.ayar .icon:before,#mobilemenu li.ayar>a>span.icon:before{content:'\E032';display:block;}.slidingWidget.withIcon.ayar .hover span:before,.mainHeading .icon.ayar:before,.tabbedWidget .tabheading a .icon.ayar:before,footer .footermenu2 li.ayar a:before{content:'\E032';}#menu li.kahve>a span.icon:before{content:'\E034';display:inline-block;}.safirCustomMenu li.kahve .icon:before,#mobilemenu li.kahve>a>span.icon:before{content:'\E034';display:block;}.slidingWidget.withIcon.kahve .hover span:before,.mainHeading .icon.kahve:before,.tabbedWidget .tabheading a .icon.kahve:before,footer .footermenu2 li.kahve a:before{content:'\E034';}#menu li.sinema>a span.icon:before{content:'\E038';display:inline-block;}.safirCustomMenu li.sinema .icon:before,#mobilemenu li.sinema>a>span.icon:before{content:'\E038';display:block;}.slidingWidget.withIcon.sinema .hover span:before,.mainHeading .icon.sinema:before,.tabbedWidget .tabheading a .icon.sinema:before,footer .footermenu2 li.sinema a:before{content:'\E038';}#menu li.oyun>a span.icon:before{content:'\E039';display:inline-block;}.safirCustomMenu li.oyun .icon:before,#mobilemenu li.oyun>a>span.icon:before{content:'\E039';display:block;}.slidingWidget.withIcon.oyun .hover span:before,.mainHeading .icon.oyun:before,.tabbedWidget .tabheading a .icon.oyun:before,footer .footermenu2 li.oyun a:before{content:'\E039';}#menu li.eglence>a span.icon:before{content:'\E03A';display:inline-block;}.safirCustomMenu li.eglence .icon:before,#mobilemenu li.eglence>a>span.icon:before{content:'\E03A';display:block;}.slidingWidget.withIcon.eglence .hover span:before,.mainHeading .icon.eglence:before,.tabbedWidget .tabheading a .icon.eglence:before,footer .footermenu2 li.eglence a:before{content:'\E03A';}#menu li.bilim>a span.icon:before{content:'\E015';display:inline-block;}.safirCustomMenu li.bilim .icon:before,#mobilemenu li.bilim>a>span.icon:before{content:'\E015';display:block;}.slidingWidget.withIcon.bilim .hover span:before,.mainHeading .icon.bilim:before,.tabbedWidget .tabheading a .icon.bilim:before,footer .footermenu2 li.bilim a:before{content:'\E015';}#menu li.menu1>a span.icon:before{content:'\E026';display:inline-block;}.safirCustomMenu li.menu1 .icon:before,#mobilemenu li.menu1>a>span.icon:before{content:'\E026';display:block;}.slidingWidget.withIcon.menu1 .hover span:before,.mainHeading .icon.menu1:before,.tabbedWidget .tabheading a .icon.menu1:before,footer .footermenu2 li.menu1 a:before{content:'\E026';}#menu li.menu2>a span.icon:before{content:'\E03B';display:inline-block;}.safirCustomMenu li.menu2 .icon:before,#mobilemenu li.menu2>a>span.icon:before{content:'\E03B';display:block;}.slidingWidget.withIcon.menu2 .hover span:before,.mainHeading .icon.menu2:before,.tabbedWidget .tabheading a .icon.menu2:before,footer .footermenu2 li.menu2 a:before{content:'\E03B';}#menu li.wifi>a span.icon:before{content:'\E00D';display:inline-block;}.safirCustomMenu li.wifi .icon:before,#mobilemenu li.wifi>a>span.icon:before{content:'\E00D';display:block;}.slidingWidget.withIcon.wifi .hover span:before,.mainHeading .icon.wifi:before,.tabbedWidget .tabheading a .icon.wifi:before,footer .footermenu2 li.wifi a:before{content:'\E00D';}#menu li.foto>a span.icon:before{content:'\E012';display:inline-block;}.safirCustomMenu li.foto .icon:before,#mobilemenu li.foto>a>span.icon:before{content:'\E012';display:block;}.slidingWidget.withIcon.foto .hover span:before,.mainHeading .icon.foto:before,.tabbedWidget .tabheading a .icon.foto:before,footer .footermenu2 li.foto a:before{content:'\E012';}#menu li.video>a span.icon:before{content:'\E021';display:inline-block;}.safirCustomMenu li.video .icon:before,#mobilemenu li.video>a>span.icon:before{content:'\E021';display:block;}.slidingWidget.withIcon.video .hover span:before,.mainHeading .icon.video:before,.tabbedWidget .tabheading a .icon.video:before,footer .footermenu2 li.video a:before{content:'\E021';}#menu li.ates>a span.icon:before{content:'\E03E';display:inline-block;}.safirCustomMenu li.ates .icon:before,#mobilemenu li.ates>a>span.icon:before{content:'\E03E';display:block;}.slidingWidget.withIcon.ates .hover span:before,.mainHeading .icon.ates:before,.tabbedWidget .tabheading a .icon.ates:before,footer .footermenu2 li.ates a:before{content:'\E03E';}#menu li.gozluk>a span.icon:before{content:'\E03C';display:inline-block;}.safirCustomMenu li.gozluk .icon:before,#mobilemenu li.gozluk>a>span.icon:before{content:'\E03C';display:block;}.slidingWidget.withIcon.gozluk .hover span:before,.mainHeading .icon.gozluk:before,.tabbedWidget .tabheading a .icon.gozluk:before,footer .footermenu2 li.gozluk a:before{content:'\E03C';}#menu li.arti>a span.icon:before{content:'\E004';display:inline-block;}.safirCustomMenu li.arti .icon:before,#mobilemenu li.arti>a>span.icon:before{content:'\E004';display:block;}.slidingWidget.withIcon.arti .hover span:before,.mainHeading .icon.arti:before,.tabbedWidget .tabheading a .icon.arti:before,footer .footermenu2 li.arti a:before{content:'\E004';}#menu li.klasor>a span.icon:before{content:'\E044';display:inline-block;}.safirCustomMenu li.klasor .icon:before,#mobilemenu li.klasor>a>span.icon:before{content:'\E044';display:block;}.slidingWidget.withIcon.klasor .hover span:before,.mainHeading .icon.klasor:before,.tabbedWidget .tabheading a .icon.klasor:before,footer .footermenu2 li.klasor a:before{content:'\E044';}#menu li.futbol>a span.icon:before{content:'\E00E';display:inline-block;}.safirCustomMenu li.futbol .icon:before,#mobilemenu li.futbol>a>span.icon:before{content:'\E00E';display:block;}.slidingWidget.withIcon.futbol .hover span:before,.mainHeading .icon.futbol:before,.tabbedWidget .tabheading a .icon.futbol:before,footer .footermenu2 li.futbol a:before{content:'\E00E';}#menu li.basket>a span.icon:before{content:'\E001';display:inline-block;}.safirCustomMenu li.basket .icon:before,#mobilemenu li.basket>a>span.icon:before{content:'\E001';display:block;}.slidingWidget.withIcon.basket .hover span:before,.mainHeading .icon.basket:before,.tabbedWidget .tabheading a .icon.basket:before,footer .footermenu2 li.basket a:before{content:'\E001';}#menu li.ps>a span.icon:before{content:'\E040';display:inline-block;}.safirCustomMenu li.ps .icon:before,#mobilemenu li.ps>a>span.icon:before{content:'\E040';display:block;}.slidingWidget.withIcon.ps .hover span:before,.mainHeading .icon.ps:before,.tabbedWidget .tabheading a .icon.ps:before,footer .footermenu2 li.ps a:before{content:'\E040';}#menu li.Xbox>a span.icon:before{content:'\E041';display:inline-block;}.safirCustomMenu li.Xbox .icon:before,#mobilemenu li.Xbox>a>span.icon:before{content:'\E041';display:block;}.slidingWidget.withIcon.Xbox .hover span:before,.mainHeading .icon.Xbox:before,.tabbedWidget .tabheading a .icon.Xbox:before,footer .footermenu2 li.Xbox a:before{content:'\E041';}#menu li.apple>a span.icon:before{content:'\E042';display:inline-block;}.safirCustomMenu li.apple .icon:before,#mobilemenu li.apple>a>span.icon:before{content:'\E042';display:block;}.slidingWidget.withIcon.apple .hover span:before,.mainHeading .icon.apple:before,.tabbedWidget .tabheading a .icon.apple:before,footer .footermenu2 li.apple a:before{content:'\E042';}#menu li.windows>a span.icon:before{content:'\E043';display:inline-block;}.safirCustomMenu li.windows .icon:before,#mobilemenu li.windows>a>span.icon:before{content:'\E043';display:block;}.slidingWidget.withIcon.windows .hover span:before,.mainHeading .icon.windows:before,.tabbedWidget .tabheading a .icon.windows:before,footer .footermenu2 li.windows a:before{content:'\E043';}#menu li.saglik>a span.icon:before{content:'\E045';display:inline-block;}.safirCustomMenu li.saglik .icon:before,#mobilemenu li.saglik>a>span.icon:before{content:'\E045';display:block;}.slidingWidget.withIcon.saglik .hover span:before,.mainHeading .icon.saglik:before,.tabbedWidget .tabheading a .icon.saglik:before,footer .footermenu2 li.saglik a:before{content:'\E045';}#menu li.moda>a span.icon:before{content:'\E046';display:inline-block;}.safirCustomMenu li.moda .icon:before,#mobilemenu li.moda>a>span.icon:before{content:'\E046';display:block;}.slidingWidget.withIcon.moda .hover span:before,.mainHeading .icon.moda:before,.tabbedWidget .tabheading a .icon.moda:before,footer .footermenu2 li.moda a:before{content:'\E046';}#menu li.astroloji>a span.icon:before{content:'\E047';display:inline-block;}.safirCustomMenu li.astroloji .icon:before,#mobilemenu li.astroloji>a>span.icon:before{content:'\E047';display:block;}.slidingWidget.withIcon.astroloji .hover span:before,.mainHeading .icon.astroloji:before,.tabbedWidget .tabheading a .icon.astroloji:before,footer .footermenu2 li.astroloji a:before{content:'\E047';}#menu li.bitcoin>a span.icon:before{content:'\E048';display:inline-block;}.safirCustomMenu li.bitcoin .icon:before,#mobilemenu li.bitcoin>a>span.icon:before{content:'\E048';display:block;}.slidingWidget.withIcon.bitcoin .hover span:before,.mainHeading .icon.bitcoin:before,.tabbedWidget .tabheading a .icon.bitcoin:before,footer .footermenu2 li.bitcoin a:before{content:'\E048';}#menu li.iletisim>a span.icon:before{content:'\E04D';display:inline-block;}.safirCustomMenu li.iletisim .icon:before,#mobilemenu li.iletisim>a>span.icon:before{content:'\E04D';display:block;}.slidingWidget.withIcon.iletisim .hover span:before,.mainHeading .icon.iletisim:before,.tabbedWidget .tabheading a .icon.iletisim:before,footer .footermenu2 li.iletisim a:before{content:'\E04D';}</style>	<!-- Global site tag (gtag.js) - Google Analytics -->
+<script type="rocketlazyloadscript" async src="https://www.googletagmanager.com/gtag/js?id=UA-166955505-1"></script>
+<script type="rocketlazyloadscript">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-166955505-1');
+</script>	
+</head>
+<body data-rsssl=1 class="post-template-default single single-post postid-21630 single-format-standard desktop stickySidebar">
+
+<div id="hamburgermenu">
+	<div class="logoBlock">
+		<a href="https://www.tarzkadin.com" data-wpel-link="internal">
+			<img src="https://www.tarzkadin.com/wp-content/uploads/2016/03/tarzkadin1-1.png" alt="Tarz Kadın" title="Tarz Kadın - Anasayfa" width="250" height="60" style="height:60px;" />
+		</a>
+		<span class="close"></span>
+	</div>
+
+	<div id="mobilemenuContainer">
+		<div id="mobilemenu">
+			<ul id="menu-ust" class="menu"><li id="menu-item-25918" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-25918"><a href="https://www.tarzkadin.com" data-wpel-link="internal">Ana Sayfa</a></li>
+<li id="menu-item-25891" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-25891 color1"><a href="https://www.tarzkadin.com/moda" data-wpel-link="internal">Moda</a>
+<ul class="sub-menu">
+	<li id="menu-item-25892" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-25892 color2"><a href="https://www.tarzkadin.com/moda/kombinler" data-wpel-link="internal">Kombinler</a></li>
+</ul>
+</li>
+<li id="menu-item-25915" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-25915 color4"><a href="https://www.tarzkadin.com/sac-modelleri" data-wpel-link="internal">Saç Modelleri</a></li>
+<li id="menu-item-42623" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-42623 color1813"><a href="https://www.tarzkadin.com/guzellik" data-wpel-link="internal">Güzellik</a></li>
+<li id="menu-item-25895" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-25895 color5"><a href="https://www.tarzkadin.com/erkek" data-wpel-link="internal">Erkek</a>
+<ul class="sub-menu">
+	<li id="menu-item-25896" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-25896 color7"><a href="https://www.tarzkadin.com/erkek/kombinler-erkek" data-wpel-link="internal">Kombinler</a></li>
+	<li id="menu-item-25897" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-25897 color6"><a href="https://www.tarzkadin.com/erkek/sac-modelleri-erkek" data-wpel-link="internal">Saç Modelleri</a></li>
+</ul>
+</li>
+<li id="menu-item-25898" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-25898 color8"><a href="https://www.tarzkadin.com/evlilik-hazirliklari" data-wpel-link="internal">Evlilik Hazırlıkları</a>
+<ul class="sub-menu">
+	<li id="menu-item-25899" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-25899 color11"><a href="https://www.tarzkadin.com/evlilik-hazirliklari/abiye-modelleri" data-wpel-link="internal">Abiye Modelleri</a></li>
+	<li id="menu-item-25900" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-25900 color9"><a href="https://www.tarzkadin.com/evlilik-hazirliklari/gelinlik-modelleri" data-wpel-link="internal">Gelinlik Modelleri</a></li>
+	<li id="menu-item-25901" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-25901 color10"><a href="https://www.tarzkadin.com/evlilik-hazirliklari/nisan-ve-kina-elbiseleri" data-wpel-link="internal">Nişan ve Kına Elbiseleri</a></li>
+</ul>
+</li>
+<li id="menu-item-25916" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-25916 color12"><a href="https://www.tarzkadin.com/ev-dekorasyonu" data-wpel-link="internal">Ev Dekorasyonu</a></li>
+<li id="menu-item-25903" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25903"><a href="https://www.tarzkadin.com/reklam" data-wpel-link="internal">Reklam</a></li>
+<li id="menu-item-25904" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25904"><a href="https://www.tarzkadin.com/iletisim" data-wpel-link="internal">Hakkımızda-İletişim</a></li>
+</ul>		</div>
+	</div>
+
+	<div id="mobileSocial">
+		<ul class="safirSocial">
+	<li class="facebook">
+			<a rel="external nofollow noopener noreferrer" href="https://www.facebook.com/" title="Facebook" data-wpel-link="external" target="_blank"></a></li><li class="pinterest">
+			<a rel="external" href="#" title="Pinterest"></a></li><li class="instagram">
+			<a rel="external" href="#" title="Instagram"></a></li></ul>
+	</div>
+</div>
+<div id="overlay"></div>
+<div id="safirPage">
+<header>
+			<div id="topbar">
+			<div class="innerContainer">
+				<nav id="topmenu">
+					<ul id="menu-ust-1" class="menu"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-25918"><a href="https://www.tarzkadin.com" data-wpel-link="internal">Ana Sayfa</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-25891 color1"><a href="https://www.tarzkadin.com/moda" data-wpel-link="internal">Moda</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-25892 color2"><a href="https://www.tarzkadin.com/moda/kombinler" data-wpel-link="internal">Kombinler</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-25915 color4"><a href="https://www.tarzkadin.com/sac-modelleri" data-wpel-link="internal">Saç Modelleri</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-42623 color1813"><a href="https://www.tarzkadin.com/guzellik" data-wpel-link="internal">Güzellik</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-25895 color5"><a href="https://www.tarzkadin.com/erkek" data-wpel-link="internal">Erkek</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-25896 color7"><a href="https://www.tarzkadin.com/erkek/kombinler-erkek" data-wpel-link="internal">Kombinler</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-25897 color6"><a href="https://www.tarzkadin.com/erkek/sac-modelleri-erkek" data-wpel-link="internal">Saç Modelleri</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-25898 color8"><a href="https://www.tarzkadin.com/evlilik-hazirliklari" data-wpel-link="internal">Evlilik Hazırlıkları</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-25899 color11"><a href="https://www.tarzkadin.com/evlilik-hazirliklari/abiye-modelleri" data-wpel-link="internal">Abiye Modelleri</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-25900 color9"><a href="https://www.tarzkadin.com/evlilik-hazirliklari/gelinlik-modelleri" data-wpel-link="internal">Gelinlik Modelleri</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-25901 color10"><a href="https://www.tarzkadin.com/evlilik-hazirliklari/nisan-ve-kina-elbiseleri" data-wpel-link="internal">Nişan ve Kına Elbiseleri</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-25916 color12"><a href="https://www.tarzkadin.com/ev-dekorasyonu" data-wpel-link="internal">Ev Dekorasyonu</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25903"><a href="https://www.tarzkadin.com/reklam" data-wpel-link="internal">Reklam</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25904"><a href="https://www.tarzkadin.com/iletisim" data-wpel-link="internal">Hakkımızda-İletişim</a></li>
+</ul>				</nav>
+				<div id="headerSocial">
+					<ul class="safirSocial">
+	<li class="facebook">
+			<a rel="external nofollow noopener noreferrer" href="https://www.facebook.com/" title="Facebook" data-wpel-link="external" target="_blank"></a></li><li class="pinterest">
+			<a rel="external" href="#" title="Pinterest"></a></li><li class="instagram">
+			<a rel="external" href="#" title="Instagram"></a></li></ul>
+				</div>
+			</div>
+		</div>
+		<div id="header-cont">
+		<div class="innerContainer">
+			<div id="mobileHeader">
+				<div class="toggleMenu"></div>
+				<div id="header-logo">
+										<span><a href="https://www.tarzkadin.com" data-wpel-link="internal"><img src="https://www.tarzkadin.com/wp-content/uploads/2018/02/tarzkadin1.png" alt="Tarz Kadın" title="Tarz Kadın - Anasayfa" width="250" height="60" style="height:60px;" /></a></span>				</div>
+									<div class="searchButton"></div>
+							</div>
+							<div id="search">
+					<div class="searchButton"></div>
+					<div class="searchForm">
+						<div class="searchWidget">
+							<form method="get" class="safir-searchform" action="https://www.tarzkadin.com">
+								<input type="text" name="s" value="Arama yap..." onblur="if(this.value=='') this.value=this.defaultValue;" onfocus="if(this.value==this.defaultValue) this.value='';" />
+								<button></button>
+							</form>
+						</div>
+					</div>
+				</div>
+						<nav id="mainMenu">
+				<div id="menuGroup">
+					<div id="menu">
+						<ul id="menu-ust-2" class="menu"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-25918"><a href="https://www.tarzkadin.com" data-wpel-link="internal">Ana Sayfa</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-25891 color1"><a href="https://www.tarzkadin.com/moda" data-wpel-link="internal">Moda</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-25892 color2"><a href="https://www.tarzkadin.com/moda/kombinler" data-wpel-link="internal">Kombinler</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-25915 color4"><a href="https://www.tarzkadin.com/sac-modelleri" data-wpel-link="internal">Saç Modelleri</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-42623 color1813"><a href="https://www.tarzkadin.com/guzellik" data-wpel-link="internal">Güzellik</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-25895 color5"><a href="https://www.tarzkadin.com/erkek" data-wpel-link="internal">Erkek</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-25896 color7"><a href="https://www.tarzkadin.com/erkek/kombinler-erkek" data-wpel-link="internal">Kombinler</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-25897 color6"><a href="https://www.tarzkadin.com/erkek/sac-modelleri-erkek" data-wpel-link="internal">Saç Modelleri</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-25898 color8"><a href="https://www.tarzkadin.com/evlilik-hazirliklari" data-wpel-link="internal">Evlilik Hazırlıkları</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-25899 color11"><a href="https://www.tarzkadin.com/evlilik-hazirliklari/abiye-modelleri" data-wpel-link="internal">Abiye Modelleri</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-25900 color9"><a href="https://www.tarzkadin.com/evlilik-hazirliklari/gelinlik-modelleri" data-wpel-link="internal">Gelinlik Modelleri</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-25901 color10"><a href="https://www.tarzkadin.com/evlilik-hazirliklari/nisan-ve-kina-elbiseleri" data-wpel-link="internal">Nişan ve Kına Elbiseleri</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-25916 color12"><a href="https://www.tarzkadin.com/ev-dekorasyonu" data-wpel-link="internal">Ev Dekorasyonu</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25903"><a href="https://www.tarzkadin.com/reklam" data-wpel-link="internal">Reklam</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25904"><a href="https://www.tarzkadin.com/iletisim" data-wpel-link="internal">Hakkımızda-İletişim</a></li>
+</ul>					</div>
+				</div>
+			</nav>
+			<div style="clear: both"></div>
+		</div>
+	</div>
+</header>
+
+
+
+
+
+<div id="wrapper">
+
+			
+			
+	<div id="main">
+	<div id="content">
+		
+		
+<div id="single">
+
+<div class="safirBox">
+
+	<div class="singleHeading">
+		<h1 class="title">En Güzel Yaz Erkek Kombinleri</h1>
+					<div id="breadcrumb">
+				<div><span><a class="crumbs-home" href="https://www.tarzkadin.com" data-wpel-link="internal">Anasayfa</a></span> <span class="delimiter">&raquo;</span> <span><a href="https://www.tarzkadin.com/erkek" data-wpel-link="internal">Erkek</a></span> <span class="delimiter">&raquo;</span> <span class="current">En Güzel Yaz Erkek Kombinleri</span></div>			</div>
+			</div>
+
+	<div class="metaBox">
+					<div class="meta category"><div class="icon"></div>	<div class="safirCategoryMeta">
+						<a class="sfrCatClr cat5" href="https://www.tarzkadin.com/erkek" data-wpel-link="internal">Erkek</a>
+								<a class="sfrCatClr cat7" href="https://www.tarzkadin.com/erkek/kombinler-erkek" data-wpel-link="internal">Kombinler</a>
+					</div>
+	</div>
+							<div class="meta date"><div class="icon"></div>21.05.2021</div>
+							<div class="meta comment">
+					<div class="icon"></div>
+					<a href="https://www.tarzkadin.com/yaz-erkek-kombinleri#comments" rel="nofollow" data-wpel-link="internal">
+					0</a>
+				</div>
+							<div class="meta hit"><div class="icon"></div>
+					2.898				</div>
+						<div class="share safirSocial">
+			<ul>
+				<li class="facebook">
+					<a rel="external nofollow noopener noreferrer" href="https://www.facebook.com/sharer/sharer.php?u=https://www.tarzkadin.com/yaz-erkek-kombinleri" title="Konuyu Facebook&#039;ta Paylaş" data-wpel-link="external" target="_blank"></a>
+				</li>
+				<li class="twitter">
+					<a rel="external nofollow noopener noreferrer" href="https://www.twitter.com/share?url=https://www.tarzkadin.com/yaz-erkek-kombinleri&amp;text=En Güzel Yaz Erkek Kombinleri" title="Konuyu Twitter&#039;da Paylaş" data-wpel-link="external" target="_blank"></a>
+				</li>
+							</ul>
+		</div>
+	</div>
+
+	
+					<div id="singleBlock" class="type1">
+					<div class="thumb">
+						<img src="https://www.tarzkadin.com/wp-content/uploads/2020/06/Yaz-Erkek-Kombinleri-2020-770x433.jpg" alt="En Güzel Yaz Erkek Kombinleri" width="770" height="433" />					</div>
+
+								<div class="ads type1"><script type="rocketlazyloadscript" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- esnek -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-4644350651630449"
+     data-ad-slot="5485864159"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script type="rocketlazyloadscript">
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+							</div>
+			
+	<div id="singleContent" class="reading">
+		
+		<!-- adman_adcode_beginning --><script type="rocketlazyloadscript" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- esnek -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-4644350651630449"
+     data-ad-slot="5485864159"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script type="rocketlazyloadscript">
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script><!-- /adman_adcode_beginning --><p>En Güzel Yaz Erkek Kombinleri cool giyim tarzı erkek kreasyonları bünyesinde detaylandırılmıştır. Bu senenin erkek giyim tarzı çerçevesinde detaylandırdığımız içeriğimizdeki erkek yaz kombinleri 2021-2022 kreasyonlarını inceleyerek daha konforlu ve daha rahat bir yaz sezonu geçirebilirsiniz.</p><div class=ads><div class=""><script type="rocketlazyloadscript" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-4644350651630449"
+     data-ad-slot="4003108120"></ins>
+<script type="rocketlazyloadscript">
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div></div>
+<p>Yaz mevsiminde erkek kombinleri yaparken dikkat etmeniz gereken detaylar vardır. Erkekler bayanlara göre daha çok terlerler. Bu nedenle yaz için erkek kombinleri yaparken dikkat etmeniz gereken ilk kriter hava alan, esnek, rahat ve terletmeyen kıyafetler olmalıdır. Erkekler için yaz kombinleri hakkındaki detayları ve ince nüansları birlikte görelim.</p>
+<div id="toc_container" class="toc_wrap_left no_bullets"><p class="toc_title">Makalemizde neler var</p><ul class="toc_list"><li><a href="#En_Guzel_Yaz_Erkek_Kombinleri">En Güzel Yaz Erkek Kombinleri</a></li><li><a href="#Genc_Erkek_Yaz_Kombinleri_Nelerdir">Genç Erkek Yaz Kombinleri Nelerdir?</a></li><li><a href="#Erkek_Yaz_Kombinleri_Renkleri">Erkek Yaz Kombinleri Renkleri</a></li><li><a href="#Erkekler_Icin_Yaz_Kombinleri_Nasil_Yapilir"> Erkekler İçin Yaz Kombinleri Nasıl Yapılır?</a></li><li><a href="#Erkek_Kombinlerinde_Yazin_Ne_Giyilir">Erkek Kombinlerinde Yazın Ne Giyilir?</a></li><li><a href="#Resim_Galerisi_Erkek_Giyim_Kombin_Yaz">Resim Galerisi: Erkek Giyim Kombin Yaz</a></li></ul></div>
+<h2><span id="En_Guzel_Yaz_Erkek_Kombinleri">En Güzel Yaz Erkek Kombinleri</span></h2>
+<p>Yazlık erkek kombinleri nelerdir? Chino pantolon, tişört, keten şort erkek, keten gömlek erkek, ince jean pantolon erkek, keten blazer ceket erkek, derin sıfır kol atlet erkek, kot ceket erkek, şömiziye yaka kısa kollular, kapri modelleri, kısa kollu gömlekler ve kumaş pantolonlar bulunmaktadır.</p>
+<div id="attachment_21631" style="width: 574px" class="wp-caption aligncenter"><img aria-describedby="caption-attachment-21631" decoding="async" class="size-full wp-image-21631" src="https://www.tarzkadin.com/wp-content/uploads/2020/06/Erkek-giyim-kombin-yaz.jpg" alt="" width="564" height="704" srcset="https://www.tarzkadin.com/wp-content/uploads/2020/06/Erkek-giyim-kombin-yaz.jpg 564w, https://www.tarzkadin.com/wp-content/uploads/2020/06/Erkek-giyim-kombin-yaz-240x300.jpg 240w" sizes="(max-width: 564px) 100vw, 564px" /><p id="caption-attachment-21631" class="wp-caption-text">Erkek giyim kombin yaz</p></div>
+<p><span style="color: #ff00ff;"><a style="color: #ff00ff;" href="https://www.tarzkadin.com/erkek-beyaz-pantolon-kombinleri-tum-detaylari-ile" data-wpel-link="internal">Beyaz pantolon kombinleri erkek</a></span> yaz için en ideal pantolon ve kombin rengidir. Ancak kalın dokulu kumaşlar yerine ince Jean beyaz pantolon şeklinde veya beyaz keten pantolon ya da beyaz şort şeklinde tercihlerde bulunabilirsiniz.</p>
+<p>Yaz erkek giyim kombinleri bünyesinde kullanacağınız kıyafetler pamuk ve keten karışımlı kumaşlardan üretilmiş olmalıdır. Aşırı dar ve vücudu saran kıyafetler yerine, vücudunuzun hava almasını kolaylaştıracak kapri, şort, gömlek gibi kombin parçalarından yararlanmalısınız.</p>
+<p>Yeni sezon erkek kombinleri yazlık moda kombinleri arasında  salaş tişört, salaş gömlek, sporcu atleti gibi salaş yazlık kombinler bulunmaktadır.</p><div class=ads><div class=""><script type="rocketlazyloadscript" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-4644350651630449"
+     data-ad-slot="4003108120"></ins>
+<script type="rocketlazyloadscript">
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div>
+<h3><span id="Genc_Erkek_Yaz_Kombinleri_Nelerdir">Genç Erkek Yaz Kombinleri Nelerdir?</span></h3>
+<p><span style="text-decoration: underline;">Yazlık kombinler genç:</span> Genç erkek yaz kombinleri arasında daha çok spor kombinler bulunmaktadır. Genç erkek kombinleri bünyesinde yaz döneminde keten şort, tişört, kapri ve sıfır kol atlet kullanımının arttığını görmekteyiz.</p>
+<p><span style="text-decoration: underline;">Şort-sporcu atlet kombini, şort-tişört kombini, şort-polo yaka kombini, Penye şort-tişört kombini</span> yaz sıcaklarında serinlemenin adresi olan erkek yaz modası arasında yer almaktadır. Şort tercih ederken keten şort veya kot şort kullanmanızı öneriyoruz.</p>
+<div id="attachment_31129" style="width: 574px" class="wp-caption aligncenter"><img aria-describedby="caption-attachment-31129" decoding="async" loading="lazy" class="size-full wp-image-31129" src="https://www.tarzkadin.com/wp-content/uploads/2020/06/Erkek-Yaz-Giyim-Modelleri.jpg" alt="Erkek Yaz Giyim Modelleri" width="564" height="858" srcset="https://www.tarzkadin.com/wp-content/uploads/2020/06/Erkek-Yaz-Giyim-Modelleri.jpg 564w, https://www.tarzkadin.com/wp-content/uploads/2020/06/Erkek-Yaz-Giyim-Modelleri-197x300.jpg 197w" sizes="(max-width: 564px) 100vw, 564px" /><p id="caption-attachment-31129" class="wp-caption-text">Erkek Yaz Giyim Modelleri</p></div>
+<p>Kargo pantolon tarzı kargo şort modelleri kilolu göstereceği için şişman erkek şort modelleri olarak değilde zayıf erkek şort modelleri olarak kullanılmalıdır.</p>
+<p><span style="text-decoration: underline;">Tişört-kot pantolon kombini</span> ise günlük erkek kombinleri çerçevesinde her türlü ortamda kullanabileceğiniz erkek kombinleri yaz stilleri olarak karşımıza çıkmaktadır.</p>
+<p><span style="text-decoration: underline;">Chino pantolon-gömlek kombini</span> ise yaz sıcakları ile baş edebileceğiniz hem tarz hem de şık olmanızı sağlayacak yaz için kombinler arasında yer almaktadır.</p>
+<p><span style="text-decoration: underline;">Serin yaz akşamları için</span> erkek giyim yaz kombinleri çerçevesinde ceket yok mu diyenlere spor giyim tarzı <span style="text-decoration: underline;">erkek için blazer ceket ve kot ceket</span> modellerini öneriyoruz. Ceket içine giydiğiniz kombin parçası ile ceket rengi zıt renk uyumu kombinleri şeklinde yapılırsa daha etkili sonuçlar verecektir.</p><!-- adman_adcode (middle, 1) --><script type="rocketlazyloadscript" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- esnek -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-4644350651630449"
+     data-ad-slot="5485864159"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script type="rocketlazyloadscript">
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script><!-- /adman_adcode (middle) -->
+<p>Klasik spor giyim tarzı erkek ise her yaştan erkeğin kullanabileceği geniş bir alana sahiptir. Bu nedenle yazlık erkek kombinleri çerçevesinde her türlü ortama ayak uydurabileceğiniz  klasik spor giyim tarzı tam size göre olabilir.</p>
+<div id="attachment_21632" style="width: 574px" class="wp-caption aligncenter"><img aria-describedby="caption-attachment-21632" decoding="async" loading="lazy" class="size-full wp-image-21632" src="https://www.tarzkadin.com/wp-content/uploads/2020/06/Yaz-için-erkek-kombinleri.jpg" alt="" width="564" height="564" srcset="https://www.tarzkadin.com/wp-content/uploads/2020/06/Yaz-için-erkek-kombinleri.jpg 564w, https://www.tarzkadin.com/wp-content/uploads/2020/06/Yaz-için-erkek-kombinleri-300x300.jpg 300w, https://www.tarzkadin.com/wp-content/uploads/2020/06/Yaz-için-erkek-kombinleri-150x150.jpg 150w" sizes="(max-width: 564px) 100vw, 564px" /><p id="caption-attachment-21632" class="wp-caption-text">Yaz için erkek kombinleri</p></div>
+<h3><span id="Erkek_Yaz_Kombinleri_Renkleri">Erkek Yaz Kombinleri Renkleri</span></h3>
+<p>Yaz modası erkek renkleri seçilirken ten rengi uyumu asla atlanılmaması gereken bir detaydır. Yeni sezon erkek kombin renkleri kullanılırken zıt renk uyumu ve giyimde renk uyumu kuralları doğrultusunda tercihler yapılmalıdır.</p>
+<p>Yeni moda erkek kıyafet renkleri lacivert, haki yeşili, krem renk, Mercan kırmızısı, vizon rengi, beyaz, bej rengi, bebe mavisi, ekru renk, kiraz kırmızısı, mürdüm rengi, pudra rengi, gül kurusu rengi ve ekru renk bulunmaktadır. Ayrıca pas rengi, kül yeşili, gün ışığı rengi ve gri rengi de bu senenin erkek yazlık kıyafet kombinleri renkleri arasında yer almaktadır.</p>
+<p>Erkek yaz kombinleri tercihinde bulunurken bu renkleri dikkate alarak seçimler yapmanız daha doğru olacaktır. Yaz için kombin renkleri kullanırken de uyumlu renk kombinasyonları oluşturmaya ve ten renginize uyum sağlayan  erkek tarz kombinleri yapmaya dikkat edin.</p>
+<p>Örneğin; kırmızı-beyaz veya krem-bordo ile Ekru renk, krem, vizon rengi ve beyaz, lacivert ile sarı, beyaz, gri ve Ekru renk gibi açık ve koyu renk erkek yaz kombin edebilirsiniz.</p>
+<div id="attachment_21633" style="width: 574px" class="wp-caption aligncenter"><img aria-describedby="caption-attachment-21633" decoding="async" loading="lazy" class="size-full wp-image-21633" src="https://www.tarzkadin.com/wp-content/uploads/2020/06/Yaz-mevsimi-erkek-kombinleri.jpg" alt="" width="564" height="837" srcset="https://www.tarzkadin.com/wp-content/uploads/2020/06/Yaz-mevsimi-erkek-kombinleri.jpg 564w, https://www.tarzkadin.com/wp-content/uploads/2020/06/Yaz-mevsimi-erkek-kombinleri-202x300.jpg 202w" sizes="(max-width: 564px) 100vw, 564px" /><p id="caption-attachment-21633" class="wp-caption-text">Yaz mevsimi erkek kombinleri</p></div>
+<h3><span id="Erkekler_Icin_Yaz_Kombinleri_Nasil_Yapilir"> Erkekler İçin Yaz Kombinleri Nasıl Yapılır?</span></h3>
+<p>Erkek kombilerinde açık renklerde kıyafet kullanırken tarzınıza da önem vermelisiniz.  Erkek giyim tarzına uygun salaş yaz kombinleri, günlük yaz kombinler, yaz Sokak kombinleri, sportif kombinler yaz, yazlık özel gün kombinleri, yaz düğün kombinleri erkek gibi birçok alanda tarz kombinler yapabilirsiniz.</p>
+<p>Yaz kombinleri yaparken son derece rahat olmalısınız. Örneğin denim kombinler ile birlikte tişört kullanabilirsiniz. Tişört modelleri ile serin yaz akşamları için blazer ceket kullanabilirsiniz. Keten şort ile birlikte keten gömlek kombini yapabilirsiniz. Tüm bu kombinlerinizde yaz kombinleri için yazlık rahat ayakkabı kullanmalısınız.</p>
+<div id="attachment_21634" style="width: 490px" class="wp-caption aligncenter"><img aria-describedby="caption-attachment-21634" decoding="async" loading="lazy" class="size-full wp-image-21634" src="https://www.tarzkadin.com/wp-content/uploads/2020/06/Salaş-yazlık-kombinler.jpg" alt="" width="480" height="546" srcset="https://www.tarzkadin.com/wp-content/uploads/2020/06/Salaş-yazlık-kombinler.jpg 480w, https://www.tarzkadin.com/wp-content/uploads/2020/06/Salaş-yazlık-kombinler-264x300.jpg 264w" sizes="(max-width: 480px) 100vw, 480px" /><p id="caption-attachment-21634" class="wp-caption-text">Salaş yazlık kombinler-yazlık erkek kombin</p></div>
+<h3><span id="Erkek_Kombinlerinde_Yazin_Ne_Giyilir">Erkek Kombinlerinde Yazın Ne Giyilir?</span></h3>
+<p>Bulunduğunuz bölge ve iklim şartlarına göre en uygun erkek tarz kombin parçası seçmelisiniz. Örneğin Antalya’da gündüz ve gece aşırı sıcak olur. Bu nedenle erkek kombin yaz için kombinlerinize ceket dahil etmenize gerek kalmaz. Ancak Konya-Ankara gibi gündüz sıcak akşam serin olan bölgelerde serin yaz akşamları için yaz kombinleri erkek için kombinlerinize mutlaka ceket dahil etmelisiniz.</p>
+<h4><span id="Resim_Galerisi_Erkek_Giyim_Kombin_Yaz">Resim Galerisi: Erkek Giyim Kombin Yaz</span></h4>
+<p>2021-2022 Yaz erkek giyim kombinleri kreasyonlarından seçtiğimiz parçaları daha fazla detay ve fikir için sizlerle paylaşıyoruz. Erkek kombinleri yaz için, bu senenin erkek giyim yaz kombinleri görsellerine yer verdik.</p>
+
+		<style type="text/css">
+			#gallery-2 {
+				margin: auto;
+			}
+			#gallery-2 .gallery-item {
+				float: left;
+				margin-top: 10px;
+				text-align: center;
+				width: 25%;
+			}
+			#gallery-2 img {
+				border: 2px solid #cfcfcf;
+			}
+			#gallery-2 .gallery-caption {
+				margin-left: 0;
+			}
+			/* see gallery_shortcode() in wp-includes/media.php */
+		</style>
+		<div id='gallery-2' class='gallery galleryid-21630 gallery-columns-4 gallery-size-thumbnail'><dl class='gallery-item'>
+			<dt class='gallery-icon portrait'>
+				<a title="yaz kombinleri erkek" href="https://www.tarzkadin.com/yaz-erkek-kombinleri/yaz-kombinleri-erkek-2" data-wpel-link="internal"><img width="150" height="150" src="https://www.tarzkadin.com/wp-content/uploads/2020/06/yaz-kombinleri-erkek-150x150.jpg" class="attachment-thumbnail size-thumbnail" alt="yaz kombinleri erkek" decoding="async" loading="lazy" aria-describedby="gallery-2-31144" /></a>
+			</dt>
+				<dd class='wp-caption-text gallery-caption' id='gallery-2-31144'>
+				yaz kombinleri erkek
+				</dd></dl><dl class='gallery-item'>
+			<dt class='gallery-icon portrait'>
+				<a title="Yaz İçin Kombinler" href="https://www.tarzkadin.com/yaz-erkek-kombinleri/yaz-icin-kombinler" data-wpel-link="internal"><img width="150" height="150" src="https://www.tarzkadin.com/wp-content/uploads/2020/06/Yaz-Icin-Kombinler-150x150.jpg" class="attachment-thumbnail size-thumbnail" alt="Yaz İçin Kombinler" decoding="async" loading="lazy" aria-describedby="gallery-2-31143" /></a>
+			</dt>
+				<dd class='wp-caption-text gallery-caption' id='gallery-2-31143'>
+				Yaz İçin Kombinler
+				</dd></dl><dl class='gallery-item'>
+			<dt class='gallery-icon portrait'>
+				<a title="Yaz erkek kombinleri" href="https://www.tarzkadin.com/yaz-erkek-kombinleri/yaz-erkek-kombinleri-3" data-wpel-link="internal"><img width="150" height="150" src="https://www.tarzkadin.com/wp-content/uploads/2020/06/Yaz-erkek-kombinleri-150x150.jpg" class="attachment-thumbnail size-thumbnail" alt="Yaz erkek kombinleri" decoding="async" loading="lazy" aria-describedby="gallery-2-31142" /></a>
+			</dt>
+				<dd class='wp-caption-text gallery-caption' id='gallery-2-31142'>
+				Yaz erkek kombinleri
+				</dd></dl><dl class='gallery-item'>
+			<dt class='gallery-icon portrait'>
+				<a title="Erkek kombinleri yaz" href="https://www.tarzkadin.com/yaz-erkek-kombinleri/erkek-kombinleri-yaz-2" data-wpel-link="internal"><img width="150" height="150" src="https://www.tarzkadin.com/wp-content/uploads/2020/06/Erkek-kombinleri-yaz-150x150.jpg" class="attachment-thumbnail size-thumbnail" alt="Erkek kombinleri yaz" decoding="async" loading="lazy" aria-describedby="gallery-2-31141" /></a>
+			</dt>
+				<dd class='wp-caption-text gallery-caption' id='gallery-2-31141'>
+				Erkek kombinleri yaz
+				</dd></dl><br style="clear: both" /><dl class='gallery-item'>
+			<dt class='gallery-icon landscape'>
+				<a title="Erkek Kombin Yaz" href="https://www.tarzkadin.com/yaz-erkek-kombinleri/erkek-kombin-yaz" data-wpel-link="internal"><img width="150" height="150" src="https://www.tarzkadin.com/wp-content/uploads/2020/06/Erkek-Kombin-Yaz-150x150.jpg" class="attachment-thumbnail size-thumbnail" alt="Erkek Kombin Yaz" decoding="async" loading="lazy" aria-describedby="gallery-2-31140" srcset="https://www.tarzkadin.com/wp-content/uploads/2020/06/Erkek-Kombin-Yaz-150x150.jpg 150w, https://www.tarzkadin.com/wp-content/uploads/2020/06/Erkek-Kombin-Yaz-300x300.jpg 300w, https://www.tarzkadin.com/wp-content/uploads/2020/06/Erkek-Kombin-Yaz.jpg 564w" sizes="(max-width: 150px) 100vw, 150px" /></a>
+			</dt>
+				<dd class='wp-caption-text gallery-caption' id='gallery-2-31140'>
+				Erkek Kombin Yaz
+				</dd></dl><dl class='gallery-item'>
+			<dt class='gallery-icon portrait'>
+				<a title="Erkek giyim yaz kombinleri" href="https://www.tarzkadin.com/yaz-erkek-kombinleri/erkek-giyim-yaz-kombinleri-2" data-wpel-link="internal"><img width="150" height="150" src="https://www.tarzkadin.com/wp-content/uploads/2020/06/Erkek-giyim-yaz-kombinleri-150x150.jpg" class="attachment-thumbnail size-thumbnail" alt="Erkek giyim yaz kombinleri" decoding="async" loading="lazy" aria-describedby="gallery-2-31139" /></a>
+			</dt>
+				<dd class='wp-caption-text gallery-caption' id='gallery-2-31139'>
+				Erkek giyim yaz kombinleri
+				</dd></dl><dl class='gallery-item'>
+			<dt class='gallery-icon portrait'>
+				<a title="Erkek Yazlık Kıyafet Kombinleri" href="https://www.tarzkadin.com/yaz-erkek-kombinleri/erkek-yazlik-kiyafet-kombinleri" data-wpel-link="internal"><img width="150" height="150" src="https://www.tarzkadin.com/wp-content/uploads/2020/06/Erkek-Yazlik-Kiyafet-Kombinleri-150x150.jpg" class="attachment-thumbnail size-thumbnail" alt="Erkek Yazlık Kıyafet Kombinleri" decoding="async" loading="lazy" aria-describedby="gallery-2-31138" /></a>
+			</dt>
+				<dd class='wp-caption-text gallery-caption' id='gallery-2-31138'>
+				Erkek Yazlık Kıyafet Kombinleri
+				</dd></dl><dl class='gallery-item'>
+			<dt class='gallery-icon portrait'>
+				<a title="erkek yaz modası" href="https://www.tarzkadin.com/yaz-erkek-kombinleri/erkek-yaz-modasi" data-wpel-link="internal"><img width="150" height="150" src="https://www.tarzkadin.com/wp-content/uploads/2020/06/erkek-yaz-modasi-150x150.jpg" class="attachment-thumbnail size-thumbnail" alt="erkek yaz modası" decoding="async" loading="lazy" aria-describedby="gallery-2-31137" /></a>
+			</dt>
+				<dd class='wp-caption-text gallery-caption' id='gallery-2-31137'>
+				erkek yaz modası
+				</dd></dl><br style="clear: both" /><dl class='gallery-item'>
+			<dt class='gallery-icon portrait'>
+				<a title="Erkek yaz kombinleri 2021-2022" href="https://www.tarzkadin.com/yaz-erkek-kombinleri/erkek-yaz-kombinleri-2021-2022" data-wpel-link="internal"><img width="150" height="150" src="https://www.tarzkadin.com/wp-content/uploads/2020/06/Erkek-yaz-kombinleri-2021-2022-150x150.jpg" class="attachment-thumbnail size-thumbnail" alt="Erkek yaz kombinleri 2021-2022" decoding="async" loading="lazy" aria-describedby="gallery-2-31136" /></a>
+			</dt>
+				<dd class='wp-caption-text gallery-caption' id='gallery-2-31136'>
+				Erkek yaz kombinleri 2021-2022
+				</dd></dl><dl class='gallery-item'>
+			<dt class='gallery-icon portrait'>
+				<a title="yeni sezon erkek kombinleri" href="https://www.tarzkadin.com/yaz-erkek-kombinleri/yeni-sezon-erkek-kombinleri" data-wpel-link="internal"><img width="150" height="150" src="https://www.tarzkadin.com/wp-content/uploads/2020/06/yeni-sezon-erkek-kombinleri-150x150.jpg" class="attachment-thumbnail size-thumbnail" alt="yeni sezon erkek kombinleri" decoding="async" loading="lazy" aria-describedby="gallery-2-31135" /></a>
+			</dt>
+				<dd class='wp-caption-text gallery-caption' id='gallery-2-31135'>
+				yeni sezon erkek kombinleri
+				</dd></dl><dl class='gallery-item'>
+			<dt class='gallery-icon portrait'>
+				<a title="yazlık kombinler genç" href="https://www.tarzkadin.com/yaz-erkek-kombinleri/yazlik-kombinler-genc" data-wpel-link="internal"><img width="150" height="150" src="https://www.tarzkadin.com/wp-content/uploads/2020/06/yazlik-kombinler-genc-150x150.jpg" class="attachment-thumbnail size-thumbnail" alt="yazlık kombinler genç" decoding="async" loading="lazy" aria-describedby="gallery-2-31134" /></a>
+			</dt>
+				<dd class='wp-caption-text gallery-caption' id='gallery-2-31134'>
+				yazlık kombinler genç
+				</dd></dl><dl class='gallery-item'>
+			<dt class='gallery-icon portrait'>
+				<a title="Yazlık Kombinler Erkek" href="https://www.tarzkadin.com/yaz-erkek-kombinleri/yazlik-kombinler-erkek" data-wpel-link="internal"><img width="150" height="150" src="https://www.tarzkadin.com/wp-content/uploads/2020/06/Yazlik-Kombinler-Erkek-150x150.jpg" class="attachment-thumbnail size-thumbnail" alt="Yazlık Kombinler Erkek" decoding="async" loading="lazy" aria-describedby="gallery-2-31133" /></a>
+			</dt>
+				<dd class='wp-caption-text gallery-caption' id='gallery-2-31133'>
+				Yazlık Kombinler Erkek
+				</dd></dl><br style="clear: both" /><dl class='gallery-item'>
+			<dt class='gallery-icon portrait'>
+				<a title="Yazlık Erkek Kombinleri" href="https://www.tarzkadin.com/yaz-erkek-kombinleri/yazlik-erkek-kombinleri" data-wpel-link="internal"><img width="150" height="150" src="https://www.tarzkadin.com/wp-content/uploads/2020/06/Yazlik-Erkek-Kombinleri-150x150.jpg" class="attachment-thumbnail size-thumbnail" alt="Yazlık Erkek Kombinleri" decoding="async" loading="lazy" aria-describedby="gallery-2-31132" /></a>
+			</dt>
+				<dd class='wp-caption-text gallery-caption' id='gallery-2-31132'>
+				Yazlık Erkek Kombinleri
+				</dd></dl><dl class='gallery-item'>
+			<dt class='gallery-icon portrait'>
+				<a title="Yazlık Erkek Kombin" href="https://www.tarzkadin.com/yaz-erkek-kombinleri/yazlik-erkek-kombin" data-wpel-link="internal"><img width="150" height="150" src="https://www.tarzkadin.com/wp-content/uploads/2020/06/Yazlik-Erkek-Kombin-150x150.jpg" class="attachment-thumbnail size-thumbnail" alt="Yazlık Erkek Kombin" decoding="async" loading="lazy" aria-describedby="gallery-2-31131" /></a>
+			</dt>
+				<dd class='wp-caption-text gallery-caption' id='gallery-2-31131'>
+				Yazlık Erkek Kombin
+				</dd></dl><dl class='gallery-item'>
+			<dt class='gallery-icon portrait'>
+				<a title="Yaz Modası Erkek" href="https://www.tarzkadin.com/yaz-erkek-kombinleri/yaz-modasi-erkek" data-wpel-link="internal"><img width="150" height="150" src="https://www.tarzkadin.com/wp-content/uploads/2020/06/Yaz-Modasi-Erkek-150x150.jpg" class="attachment-thumbnail size-thumbnail" alt="" decoding="async" loading="lazy" aria-describedby="gallery-2-31130" /></a>
+			</dt>
+				<dd class='wp-caption-text gallery-caption' id='gallery-2-31130'>
+				Yaz Modası Erkek
+				</dd></dl><dl class='gallery-item'>
+			<dt class='gallery-icon portrait'>
+				<a title="Havuç pantolon kombinleri yaz" href="https://www.tarzkadin.com/yaz-erkek-kombinleri/havuc-pantolon-kombinleri-yaz" data-wpel-link="internal"><img width="150" height="150" src="https://www.tarzkadin.com/wp-content/uploads/2020/06/Havuç-pantolon-kombinleri-yaz-150x150.jpg" class="attachment-thumbnail size-thumbnail" alt="" decoding="async" loading="lazy" aria-describedby="gallery-2-21643" /></a>
+			</dt>
+				<dd class='wp-caption-text gallery-caption' id='gallery-2-21643'>
+				Havuç pantolon kombinleri yaz
+				</dd></dl><br style="clear: both" /><dl class='gallery-item'>
+			<dt class='gallery-icon portrait'>
+				<a title="Genç erkek yaz kombinleri" href="https://www.tarzkadin.com/yaz-erkek-kombinleri/genc-erkek-yaz-kombinleri" data-wpel-link="internal"><img width="150" height="150" src="https://www.tarzkadin.com/wp-content/uploads/2020/06/Genç-erkek-yaz-kombinleri-150x150.jpg" class="attachment-thumbnail size-thumbnail" alt="" decoding="async" loading="lazy" aria-describedby="gallery-2-21642" /></a>
+			</dt>
+				<dd class='wp-caption-text gallery-caption' id='gallery-2-21642'>
+				Genç erkek yaz kombinleri
+				</dd></dl><dl class='gallery-item'>
+			<dt class='gallery-icon portrait'>
+				<a title="Erkekler için yaz kombinleri" href="https://www.tarzkadin.com/yaz-erkek-kombinleri/erkekler-icin-yaz-kombinleri" data-wpel-link="internal"><img width="150" height="150" src="https://www.tarzkadin.com/wp-content/uploads/2020/06/Erkekler-için-yaz-kombinleri-150x150.jpg" class="attachment-thumbnail size-thumbnail" alt="" decoding="async" loading="lazy" aria-describedby="gallery-2-21641" /></a>
+			</dt>
+				<dd class='wp-caption-text gallery-caption' id='gallery-2-21641'>
+				Erkekler için yaz kombinleri
+				</dd></dl><dl class='gallery-item'>
+			<dt class='gallery-icon portrait'>
+				<a title="Erkek yaz kombinleri spor" href="https://www.tarzkadin.com/yaz-erkek-kombinleri/erkek-yaz-kombinleri-spor" data-wpel-link="internal"><img width="150" height="150" src="https://www.tarzkadin.com/wp-content/uploads/2020/06/Erkek-yaz-kombinleri-spor-150x150.jpg" class="attachment-thumbnail size-thumbnail" alt="" decoding="async" loading="lazy" aria-describedby="gallery-2-21640" /></a>
+			</dt>
+				<dd class='wp-caption-text gallery-caption' id='gallery-2-21640'>
+				Erkek yaz kombinleri spor
+				</dd></dl><dl class='gallery-item'>
+			<dt class='gallery-icon portrait'>
+				<a title="Beyaz pantolon kombinleri erkek yaz" href="https://www.tarzkadin.com/yaz-erkek-kombinleri/beyaz-pantolon-kombinleri-erkek-yaz" data-wpel-link="internal"><img width="150" height="150" src="https://www.tarzkadin.com/wp-content/uploads/2020/06/Beyaz-pantolon-kombinleri-erkek-yaz-150x150.jpg" class="attachment-thumbnail size-thumbnail" alt="" decoding="async" loading="lazy" aria-describedby="gallery-2-21639" /></a>
+			</dt>
+				<dd class='wp-caption-text gallery-caption' id='gallery-2-21639'>
+				Beyaz pantolon kombinleri erkek yaz
+				</dd></dl><br style="clear: both" /><dl class='gallery-item'>
+			<dt class='gallery-icon portrait'>
+				<a title="Erkek yaz giyim kombinleri" href="https://www.tarzkadin.com/yaz-erkek-kombinleri/erkek-yaz-giyim-kombinleri" data-wpel-link="internal"><img width="150" height="150" src="https://www.tarzkadin.com/wp-content/uploads/2020/06/Erkek-yaz-giyim-kombinleri-150x150.jpg" class="attachment-thumbnail size-thumbnail" alt="" decoding="async" loading="lazy" aria-describedby="gallery-2-21638" /></a>
+			</dt>
+				<dd class='wp-caption-text gallery-caption' id='gallery-2-21638'>
+				Erkek yaz giyim kombinleri
+				</dd></dl><dl class='gallery-item'>
+			<dt class='gallery-icon portrait'>
+				<a title="Erkek yaz düğün kombinleri" href="https://www.tarzkadin.com/yaz-erkek-kombinleri/erkek-yaz-dugun-kombinleri-2" data-wpel-link="internal"><img width="150" height="150" src="https://www.tarzkadin.com/wp-content/uploads/2020/06/Erkek-yaz-düğün-kombinleri-150x150.jpg" class="attachment-thumbnail size-thumbnail" alt="" decoding="async" loading="lazy" aria-describedby="gallery-2-21637" /></a>
+			</dt>
+				<dd class='wp-caption-text gallery-caption' id='gallery-2-21637'>
+				Erkek yaz düğün kombinleri
+				</dd></dl><dl class='gallery-item'>
+			<dt class='gallery-icon portrait'>
+				<a title="Erkek kombinleri yaz-erkek şort kombinleri" href="https://www.tarzkadin.com/yaz-erkek-kombinleri/erkek-kombinleri-yaz-erkek-sort-kombinleri" data-wpel-link="internal"><img width="150" height="150" src="https://www.tarzkadin.com/wp-content/uploads/2020/06/Erkek-kombinleri-yaz-erkek-şort-kombinleri-150x150.jpg" class="attachment-thumbnail size-thumbnail" alt="" decoding="async" loading="lazy" aria-describedby="gallery-2-21636" /></a>
+			</dt>
+				<dd class='wp-caption-text gallery-caption' id='gallery-2-21636'>
+				Erkek kombinleri yaz-erkek şort kombinleri
+				</dd></dl><dl class='gallery-item'>
+			<dt class='gallery-icon portrait'>
+				<a title="Erkek klasik yaz kombinleri" href="https://www.tarzkadin.com/yaz-erkek-kombinleri/erkek-klasik-yaz-kombinleri" data-wpel-link="internal"><img width="150" height="150" src="https://www.tarzkadin.com/wp-content/uploads/2020/06/Erkek-klasik-yaz-kombinleri-150x150.jpg" class="attachment-thumbnail size-thumbnail" alt="" decoding="async" loading="lazy" aria-describedby="gallery-2-21635" /></a>
+			</dt>
+				<dd class='wp-caption-text gallery-caption' id='gallery-2-21635'>
+				Erkek klasik yaz kombinleri
+				</dd></dl><br style="clear: both" />
+		</div>
+
+<p>&nbsp;</p>
+<p class="onceki_yazi">Bir önceki makalemiz olan <a title="Siyah Kotun Üstüne Ne Giyilir Erkek" href="https://www.tarzkadin.com/siyah-kot-pantolon-ustune-ne-giyilir-erkek" data-wpel-link="internal"><b>Siyah Kotun Üstüne Ne Giyilir Erkek</b></a> başlıklı yazımızda Siyah Kot Pantolon Üstüne Ne Giyilir Erkek hakkında bilgiler vermekteyiz.</p><!-- adman_adcode_after --><script type="rocketlazyloadscript" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-4644350651630449"
+     data-ad-slot="6872620522"></ins>
+<script type="rocketlazyloadscript">
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script><!-- /adman_adcode_after --></p>		<div class='yarpp yarpp-related yarpp-related-shortcode yarpp-template-list'>
+<!-- YARPP List -->
+<h3>İlgili Yazılar:</h3><ol>
+<li><a href="https://www.tarzkadin.com/sortlu-kombinler" rel="bookmark" title="Şortlu Kombinler Kadın" data-wpel-link="internal">Şortlu Kombinler Kadın</a></li>
+<li><a href="https://www.tarzkadin.com/erkek-beyaz-pantolon-kombinleri" rel="bookmark" title="Erkek Beyaz Pantolon Kombinleri (30+stil)" data-wpel-link="internal">Erkek Beyaz Pantolon Kombinleri (30+stil)</a></li>
+</ol>
+</div>
+	</div>
+
+	<div id="page-links">
+			</div>
+
+				<div class="ads singleAd3"><script type="rocketlazyloadscript" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-4644350651630449"
+     data-ad-slot="4003108120"></ins>
+<script type="rocketlazyloadscript">
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+			
+			<div class="socialbuttons">
+	<iframe src="//www.facebook.com/plugins/like.php?href=https://www.tarzkadin.com/yaz-erkek-kombinleri&amp;send=false&amp;share=true&amp;layout=button_count&amp;width=180&amp;show_faces=false&amp;font=arial&amp;colorscheme=light&amp;action=like&amp;height=21&amp;" style="border:none; overflow:hidden; width:180px; height:20px;"></iframe>
+
+	<script type="rocketlazyloadscript">!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+	<a style="float:left;" href="https://twitter.com/share" class="twitter-share-button" data-url="https://www.tarzkadin.com/yaz-erkek-kombinleri" data-lang="tr" data-wpel-link="external" target="_blank" rel="nofollow external noopener noreferrer">Tweetle</a>
+
+</div>
+	
+		<div class="tags">
+		<span class="title">ETİKETLER:</span> <a href="https://www.tarzkadin.com/etiket/yaz-erkek-kombinleri" rel="tag" data-wpel-link="internal">Yaz Erkek Kombinleri</a>, <a href="https://www.tarzkadin.com/etiket/yaz-kombinleri-erkek" rel="tag" data-wpel-link="internal">yaz kombinleri erkek</a>	</div>
+	
+</div>
+
+		<div class="safirBox">
+			<div id="related">
+				<div class="mainHeading">
+					<div class="icon rastgele"></div>
+					<div class="title">BENZER KONULAR</div>
+				</div>
+				<div class="slidingWidget homeWidget">
+					<div class="items">
+						<div class="owl-carousel">
+							<div class="post-container">
+	<div class="post">
+		<div class="safirthumb">
+			<a href="https://www.tarzkadin.com/ense-trasi-modelleri-erkek-2021" data-wpel-link="internal">
+				<img src="https://www.tarzkadin.com/wp-content/uploads/2020/09/Ense-Trasi-Modelleri-Erkek-Stilleri-240x135.jpg" alt="Ense Traşı Modelleri Erkek Stilleri" width="240" height="135" />				<div class="hover"><span></span></div>
+			</a>
+		</div>
+		<div class="detail">
+			<div class="title">
+				<a href="https://www.tarzkadin.com/ense-trasi-modelleri-erkek-2021" data-wpel-link="internal">Ense Traşı Modelleri Erkek Stilleri</a>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="post-container">
+	<div class="post">
+		<div class="safirthumb">
+			<a href="https://www.tarzkadin.com/lacivert-pantolon-beyaz-gomlek-kombinleri-erkek" data-wpel-link="internal">
+				<img src="https://www.tarzkadin.com/wp-content/uploads/2020/07/Lacivert-Pantolon-Beyaz-Gömlek-Kombinleri-Erkek-240x135.jpg" alt="Lacivert Pantolon Beyaz Gömlek Kombinleri Erkek" width="240" height="135" />				<div class="hover"><span></span></div>
+			</a>
+		</div>
+		<div class="detail">
+			<div class="title">
+				<a href="https://www.tarzkadin.com/lacivert-pantolon-beyaz-gomlek-kombinleri-erkek" data-wpel-link="internal">Lacivert Pantolon Beyaz Gömlek Kombinleri Erkek</a>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="post-container">
+	<div class="post">
+		<div class="safirthumb">
+			<a href="https://www.tarzkadin.com/kafa-arkasi-duz-olanlar-icin-sac-modelleri-erkek" data-wpel-link="internal">
+				<img src="https://www.tarzkadin.com/wp-content/uploads/2023/09/Kafa-Arkasi-Duz-Olanlar-Icin-Sac-Modelleri-Erkek-1-240x135.jpg" alt="Kafa Arkası Düz Olanlar İçin Saç Modelleri Erkek" width="240" height="135" />				<div class="hover"><span></span></div>
+			</a>
+		</div>
+		<div class="detail">
+			<div class="title">
+				<a href="https://www.tarzkadin.com/kafa-arkasi-duz-olanlar-icin-sac-modelleri-erkek" data-wpel-link="internal">Kafa Arkası Düz Olanlar İçin Saç Modelleri Erkek</a>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="post-container">
+	<div class="post">
+		<div class="safirthumb">
+			<a href="https://www.tarzkadin.com/tas-kafa-sac-modeli" data-wpel-link="internal">
+				<img src="https://www.tarzkadin.com/wp-content/uploads/2023/09/Tas-kafa-modelleri-240x135.png" alt="Tas Kafa Saç Modeli 2024" width="240" height="135" />				<div class="hover"><span></span></div>
+			</a>
+		</div>
+		<div class="detail">
+			<div class="title">
+				<a href="https://www.tarzkadin.com/tas-kafa-sac-modeli" data-wpel-link="internal">Tas Kafa Saç Modeli 2024</a>
+			</div>
+		</div>
+	</div>
+</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+<div id="comments" class="sfrIconForm">
+
+	
+	<div class="safirBox">
+		<div class="mainHeading">
+			<div class="icon kalem"></div>
+			<div class="title">BİR YORUM YAZIN</div>
+		</div>
+			<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title"> <small><a rel="nofollow" id="cancel-comment-reply-link" href="/yaz-erkek-kombinleri#respond" style="display:none;" data-wpel-link="internal">[ Yoruma cevap yazmaktan vazgeç ]</a></small></h3><form action="https://www.tarzkadin.com/wp-comments-post.php" method="post" id="commentform" class="comment-form"><div class="container"><div class="itemContainer"><div class="item message"><textarea placeholder="Yorumunuz" class="message" name="comment" id="comment" cols="60" rows="10" tabindex="4"></textarea></div></div></div><div class="container half"><div class="itemContainer"><div class="item name"><div class="icon"><span></span></div><input placeholder="İsminiz" type="text" id="author" name="author" size="80" tabindex="2" value="" /></div></div>
+<div class="itemContainer"><div class="item mail"><div class="icon"><span></span></div><input placeholder="Mail adresiniz" type="text" id="email" name="email" size="80" tabindex="3" value="" /></div></div></div>
+<p class="comment-form-cookies-consent"><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes" /> <label for="wp-comment-cookies-consent">Bir dahaki sefere yorum yaptığımda kullanılmak üzere adımı, e-posta adresimi ve web site adresimi bu tarayıcıya kaydet.</label></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Gönder" /> <input type='hidden' name='comment_post_ID' value='21630' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="8c4ec66e34" /></p><p style="display: none !important;"><label>&#916;<textarea name="ak_hp_textarea" cols="45" rows="8" maxlength="100"></textarea></label><input type="hidden" id="ak_js_1" name="ak_js" value="130"/><script type="rocketlazyloadscript">document.getElementById( "ak_js_1" ).setAttribute( "value", ( new Date() ).getTime() );</script></p></form>	</div><!-- #respond -->
+		</div>
+
+	<div class="safirBox">
+		<div class="mainHeading">
+			<div class="icon yorum"></div>
+			<div class="title">ZİYARETÇİ YORUMLARI - 0 YORUM</div>
+		</div>
+
+		<div class="sfrCommentsList">
+							<p class="nocomments">Henüz yorum yapılmamış.</p>
+								</div>
+	</div>
+</div>
+
+
+</div><!--single-->
+
+</div><!--content-->
+
+<aside>
+<div id="panels">
+	<div class="searchWidget safirBox sidebarWidget">
+	<form method="get" class="safir-searchform" action="https://www.tarzkadin.com">
+				<input type="text" name="s" value="Aranacak ifade..." onblur="if(this.value=='') this.value=this.defaultValue;" onfocus="if(this.value==this.defaultValue) this.value='';" />
+		<button type="submit" data-icon="\E036"></button>
+	</form>
+</div><div class="adsWidget sidebarWidget"><script type="rocketlazyloadscript" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- esnek -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-4644350651630449"
+     data-ad-slot="5485864159"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script type="rocketlazyloadscript">
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div><div class="slidingWidget safirBox withIcon arti default sidebarWidget">
+	<div class="mainHeading">
+	<div class="icon menu1"></div>	<span class="title">Güncel Konular</span>
+</div>
+			<div class="widgetContent">
+			<div class="items">
+				<div class="owl-carousel">
+											<div class="post-container">
+							<div class="post">
+								<div class="safirthumb">
+									<a href="https://www.tarzkadin.com/ense-trasi-modelleri-erkek-2021" data-wpel-link="internal">
+										<img src="https://www.tarzkadin.com/wp-content/uploads/2020/09/Ense-Trasi-Modelleri-Erkek-Stilleri-260x146.jpg" alt="Ense Traşı Modelleri Erkek Stilleri" width="260" height="146" />										<div class="hover"><span></span></div>									</a>
+								</div>
+								<div class="detail">
+									<div class="title">
+										<a href="https://www.tarzkadin.com/ense-trasi-modelleri-erkek-2021" data-wpel-link="internal">Ense Traşı Modelleri Erkek Stilleri</a>
+									</div>
+												<div class="safirMetas">
+									<div class="meta date">11.09.2023</div>
+									</div>
+											</div>
+							</div>
+						</div>
+												<div class="post-container">
+							<div class="post">
+								<div class="safirthumb">
+									<a href="https://www.tarzkadin.com/kafa-arkasi-duz-olanlar-icin-sac-modelleri-erkek" data-wpel-link="internal">
+										<img src="https://www.tarzkadin.com/wp-content/uploads/2023/09/Kafa-Arkasi-Duz-Olanlar-Icin-Sac-Modelleri-Erkek-1-260x146.jpg" alt="Kafa Arkası Düz Olanlar İçin Saç Modelleri Erkek" width="260" height="146" />										<div class="hover"><span></span></div>									</a>
+								</div>
+								<div class="detail">
+									<div class="title">
+										<a href="https://www.tarzkadin.com/kafa-arkasi-duz-olanlar-icin-sac-modelleri-erkek" data-wpel-link="internal">Kafa Arkası Düz Olanlar İçin Saç Modelleri Erkek</a>
+									</div>
+												<div class="safirMetas">
+									<div class="meta date">09.09.2023</div>
+									</div>
+											</div>
+							</div>
+						</div>
+												<div class="post-container">
+							<div class="post">
+								<div class="safirthumb">
+									<a href="https://www.tarzkadin.com/tas-kafa-sac-modeli" data-wpel-link="internal">
+										<img src="https://www.tarzkadin.com/wp-content/uploads/2023/09/Tas-kafa-modelleri-260x146.png" alt="Tas Kafa Saç Modeli 2024" width="260" height="146" />										<div class="hover"><span></span></div>									</a>
+								</div>
+								<div class="detail">
+									<div class="title">
+										<a href="https://www.tarzkadin.com/tas-kafa-sac-modeli" data-wpel-link="internal">Tas Kafa Saç Modeli 2024</a>
+									</div>
+												<div class="safirMetas">
+									<div class="meta date">06.09.2023</div>
+									</div>
+											</div>
+							</div>
+						</div>
+												<div class="post-container">
+							<div class="post">
+								<div class="safirthumb">
+									<a href="https://www.tarzkadin.com/yesil-pantolon-kombinleri-tesettur" data-wpel-link="internal">
+										<img src="https://www.tarzkadin.com/wp-content/uploads/2023/09/Yesil-pantolon-kombinleri-tesettur-1-260x146.jpg" alt="Yeşil Pantolon Kombinleri Tesettür" width="260" height="146" />										<div class="hover"><span></span></div>									</a>
+								</div>
+								<div class="detail">
+									<div class="title">
+										<a href="https://www.tarzkadin.com/yesil-pantolon-kombinleri-tesettur" data-wpel-link="internal">Yeşil Pantolon Kombinleri Tesettür</a>
+									</div>
+												<div class="safirMetas">
+									<div class="meta date">05.09.2023</div>
+									</div>
+											</div>
+							</div>
+						</div>
+												<div class="post-container">
+							<div class="post">
+								<div class="safirthumb">
+									<a href="https://www.tarzkadin.com/minimalist-ev-dekorasyonu-nasil-yapilmalidir" data-wpel-link="internal">
+										<img src="https://www.tarzkadin.com/wp-content/uploads/2023/09/Minimalist-ev-dekorasyonu-260x146.jpg" alt="Minimalist Ev Dekorasyonu Nasıl Yapılmalıdır?" width="260" height="146" />										<div class="hover"><span></span></div>									</a>
+								</div>
+								<div class="detail">
+									<div class="title">
+										<a href="https://www.tarzkadin.com/minimalist-ev-dekorasyonu-nasil-yapilmalidir" data-wpel-link="internal">Minimalist Ev Dekorasyonu Nasıl Yapılmalıdır?</a>
+									</div>
+												<div class="safirMetas">
+									<div class="meta date">04.09.2023</div>
+									</div>
+											</div>
+							</div>
+						</div>
+												<div class="post-container">
+							<div class="post">
+								<div class="safirthumb">
+									<a href="https://www.tarzkadin.com/tesettur-pantolon-tunik-kombinleri" data-wpel-link="internal">
+										<img src="https://www.tarzkadin.com/wp-content/uploads/2023/06/Tesettur-pantolon-tunik-kombinler-260x146.jpg" alt="Tesettür Pantolon Tunik Kombinleri Nelerdir?" width="260" height="146" />										<div class="hover"><span></span></div>									</a>
+								</div>
+								<div class="detail">
+									<div class="title">
+										<a href="https://www.tarzkadin.com/tesettur-pantolon-tunik-kombinleri" data-wpel-link="internal">Tesettür Pantolon Tunik Kombinleri Nelerdir?</a>
+									</div>
+												<div class="safirMetas">
+									<div class="meta date">04.09.2023</div>
+									</div>
+											</div>
+							</div>
+						</div>
+										</div>
+			</div>
+		</div>
+		</div><div class="adsWidget sidebarWidget"><script type="rocketlazyloadscript" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- esnek -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-4644350651630449"
+     data-ad-slot="5485864159"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script type="rocketlazyloadscript">
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div><div class="timelineWidget safirBox default sidebarWidget">
+	<div class="mainHeading">
+	<div class="icon takvim"></div>	<span class="title">Zaman Tüneli</span>
+</div>
+			<div class="widgetContent">
+			<div class="items">
+									<div class="post-container">
+						<div class="post">
+							<div class="connector"><span class="line"></span><span class="circle"></span></div>
+							<div class="time">
+								22:20							</div>
+							<div class="detail">
+								<div class="title">
+									<a href="https://www.tarzkadin.com/ense-trasi-modelleri-erkek-2021" data-wpel-link="internal">Ense Traşı Modelleri Erkek Stilleri</a>
+								</div>
+											<div class="safirMetas">
+									<div class="meta category">	<div class="safirCategoryMeta">
+						<a class="sfrCatClr cat5" href="https://www.tarzkadin.com/erkek" data-wpel-link="internal">Erkek</a>
+								<a class="sfrCatClr cat6" href="https://www.tarzkadin.com/erkek/sac-modelleri-erkek" data-wpel-link="internal">Saç Modelleri</a>
+					</div>
+	</div>
+												<div class="meta comment">0</div>
+												<div class="meta hit">
+							3.012						</div>
+									</div>
+										</div>
+						</div>
+					</div>
+										<div class="post-container">
+						<div class="post">
+							<div class="connector"><span class="line"></span><span class="circle"></span></div>
+							<div class="time">
+								20:03							</div>
+							<div class="detail">
+								<div class="title">
+									<a href="https://www.tarzkadin.com/kafa-arkasi-duz-olanlar-icin-sac-modelleri-erkek" data-wpel-link="internal">Kafa Arkası Düz Olanlar İçin Saç Modelleri Erkek</a>
+								</div>
+											<div class="safirMetas">
+									<div class="meta category">	<div class="safirCategoryMeta">
+						<a class="sfrCatClr cat5" href="https://www.tarzkadin.com/erkek" data-wpel-link="internal">Erkek</a>
+								<a class="sfrCatClr cat6" href="https://www.tarzkadin.com/erkek/sac-modelleri-erkek" data-wpel-link="internal">Saç Modelleri</a>
+					</div>
+	</div>
+												<div class="meta comment">0</div>
+												<div class="meta hit">
+							80						</div>
+									</div>
+										</div>
+						</div>
+					</div>
+										<div class="post-container">
+						<div class="post">
+							<div class="connector"><span class="line"></span><span class="circle"></span></div>
+							<div class="time">
+								10:40							</div>
+							<div class="detail">
+								<div class="title">
+									<a href="https://www.tarzkadin.com/tas-kafa-sac-modeli" data-wpel-link="internal">Tas Kafa Saç Modeli 2024</a>
+								</div>
+											<div class="safirMetas">
+									<div class="meta category">	<div class="safirCategoryMeta">
+						<a class="sfrCatClr cat5" href="https://www.tarzkadin.com/erkek" data-wpel-link="internal">Erkek</a>
+								<a class="sfrCatClr cat6" href="https://www.tarzkadin.com/erkek/sac-modelleri-erkek" data-wpel-link="internal">Saç Modelleri</a>
+					</div>
+	</div>
+												<div class="meta comment">0</div>
+												<div class="meta hit">
+							51						</div>
+									</div>
+										</div>
+						</div>
+					</div>
+										<div class="post-container">
+						<div class="post">
+							<div class="connector"><span class="line"></span><span class="circle"></span></div>
+							<div class="time">
+								08:24							</div>
+							<div class="detail">
+								<div class="title">
+									<a href="https://www.tarzkadin.com/yesil-pantolon-kombinleri-tesettur" data-wpel-link="internal">Yeşil Pantolon Kombinleri Tesettür</a>
+								</div>
+											<div class="safirMetas">
+									<div class="meta category">	<div class="safirCategoryMeta">
+						<a class="sfrCatClr cat2" href="https://www.tarzkadin.com/moda/kombinler" data-wpel-link="internal">Kombinler</a>
+								<a class="sfrCatClr cat1" href="https://www.tarzkadin.com/moda" data-wpel-link="internal">Moda</a>
+					</div>
+	</div>
+												<div class="meta comment">0</div>
+												<div class="meta hit">
+							87						</div>
+									</div>
+										</div>
+						</div>
+					</div>
+										<div class="post-container">
+						<div class="post">
+							<div class="connector"><span class="line"></span><span class="circle"></span></div>
+							<div class="time">
+								03:16							</div>
+							<div class="detail">
+								<div class="title">
+									<a href="https://www.tarzkadin.com/minimalist-ev-dekorasyonu-nasil-yapilmalidir" data-wpel-link="internal">Minimalist Ev Dekorasyonu Nasıl Yapılmalıdır?</a>
+								</div>
+											<div class="safirMetas">
+									<div class="meta category">	<div class="safirCategoryMeta">
+						<a class="sfrCatClr cat12" href="https://www.tarzkadin.com/ev-dekorasyonu" data-wpel-link="internal">Ev Dekorasyonu</a>
+					</div>
+	</div>
+												<div class="meta comment">0</div>
+												<div class="meta hit">
+							160						</div>
+									</div>
+										</div>
+						</div>
+					</div>
+								</div>
+		</div>
+		</div>
+<div class="adsWidget sidebarWidget"><script type="rocketlazyloadscript" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- esnek -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-4644350651630449"
+     data-ad-slot="5485864159"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script type="rocketlazyloadscript">
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div><div class="advancedPostsWidget3 safirBox sidebarWidget">
+	<div class="mainHeading">
+	<div class="icon yildiz"></div>	<span class="title">En Çok Okunanlar</span>
+</div>
+			<div class="widgetContent">
+			<div class="items">
+									<div class="post-container">
+						<div class="post">
+							<div class="safirthumb">
+								<a href="https://www.tarzkadin.com/en-trend-kisa-sac-modelleri-2019-2020" data-wpel-link="internal">
+									<img src="https://www.tarzkadin.com/wp-content/uploads/2022/01/Kisa-Sac-Modelleri-2022-2023-300x169.jpg" alt="En Trend Kısa Saç Modelleri Kadın 2023 (100+fikir)" width="300" height="169" />								</a>
+							</div>
+							<div class="detail">
+									<div class="safirCategoryMeta">
+						<a class="sfrCatClr cat4" href="https://www.tarzkadin.com/sac-modelleri" data-wpel-link="internal">Saç Modelleri</a>
+					</div>
+									<div class="title">
+									<a href="https://www.tarzkadin.com/en-trend-kisa-sac-modelleri-2019-2020" data-wpel-link="internal">En Trend Kısa Saç Modelleri Kadın 2023 (100+fikir)</a>
+								</div>
+											<div class="safirMetas">
+									<div class="meta date">01.01.2023</div>
+												<div class="meta comment">20</div>
+												<div class="meta hit">
+							52.795						</div>
+									</div>
+										</div>
+						</div>
+					</div>
+										<div class="post-container">
+						<div class="post">
+							<div class="safirthumb">
+								<a href="https://www.tarzkadin.com/yesil-elbise-altina-ne-renk-ayakkabi" data-wpel-link="internal">
+									<img src="https://www.tarzkadin.com/wp-content/uploads/2019/02/Yeşil-elbise-altına-ne-renk-ayakkabı-300x165.jpg" alt="Yeşil Elbise Altına Ne Renk Ayakkabı Giyilir?" width="300" height="169" />								</a>
+							</div>
+							<div class="detail">
+									<div class="safirCategoryMeta">
+						<a class="sfrCatClr cat2" href="https://www.tarzkadin.com/moda/kombinler" data-wpel-link="internal">Kombinler</a>
+								<a class="sfrCatClr cat1" href="https://www.tarzkadin.com/moda" data-wpel-link="internal">Moda</a>
+					</div>
+									<div class="title">
+									<a href="https://www.tarzkadin.com/yesil-elbise-altina-ne-renk-ayakkabi" data-wpel-link="internal">Yeşil Elbise Altına Ne Renk Ayakkabı Giyilir?</a>
+								</div>
+											<div class="safirMetas">
+									<div class="meta date">13.03.2021</div>
+												<div class="meta comment">4</div>
+												<div class="meta hit">
+							19.851						</div>
+									</div>
+										</div>
+						</div>
+					</div>
+										<div class="post-container">
+						<div class="post">
+							<div class="safirthumb">
+								<a href="https://www.tarzkadin.com/lacivert-hangi-renkle-kombinlenir" data-wpel-link="internal">
+									<img src="https://www.tarzkadin.com/wp-content/uploads/2019/02/lacivert-hangi-renkle-kombinlenir-e1613274768541-291x169.jpg" alt="Lacivert Hangi Renkle Kombinlenir?" width="300" height="169" />								</a>
+							</div>
+							<div class="detail">
+									<div class="safirCategoryMeta">
+						<a class="sfrCatClr cat2" href="https://www.tarzkadin.com/moda/kombinler" data-wpel-link="internal">Kombinler</a>
+								<a class="sfrCatClr cat1" href="https://www.tarzkadin.com/moda" data-wpel-link="internal">Moda</a>
+					</div>
+									<div class="title">
+									<a href="https://www.tarzkadin.com/lacivert-hangi-renkle-kombinlenir" data-wpel-link="internal">Lacivert Hangi Renkle Kombinlenir?</a>
+								</div>
+											<div class="safirMetas">
+									<div class="meta date">12.02.2021</div>
+												<div class="meta comment">1</div>
+												<div class="meta hit">
+							18.062						</div>
+									</div>
+										</div>
+						</div>
+					</div>
+										<div class="post-container">
+						<div class="post">
+							<div class="safirthumb">
+								<a href="https://www.tarzkadin.com/yesil-elbisenin-uzerine-hangi-renk-sal-gider" data-wpel-link="internal">
+									<img src="https://www.tarzkadin.com/wp-content/uploads/2019/07/Adsız-tasarım-4-300x165.jpg" alt="Yeşil Elbisenin Üzerine Hangi Renk Şal Gider?" width="300" height="169" />								</a>
+							</div>
+							<div class="detail">
+									<div class="safirCategoryMeta">
+						<a class="sfrCatClr cat2" href="https://www.tarzkadin.com/moda/kombinler" data-wpel-link="internal">Kombinler</a>
+								<a class="sfrCatClr cat1" href="https://www.tarzkadin.com/moda" data-wpel-link="internal">Moda</a>
+					</div>
+									<div class="title">
+									<a href="https://www.tarzkadin.com/yesil-elbisenin-uzerine-hangi-renk-sal-gider" data-wpel-link="internal">Yeşil Elbisenin Üzerine Hangi Renk Şal Gider?</a>
+								</div>
+											<div class="safirMetas">
+									<div class="meta date">14.07.2020</div>
+												<div class="meta comment">4</div>
+												<div class="meta hit">
+							17.226						</div>
+									</div>
+										</div>
+						</div>
+					</div>
+										<div class="post-container">
+						<div class="post">
+							<div class="safirthumb">
+								<a href="https://www.tarzkadin.com/2017-cocuk-abiyeleri" data-wpel-link="internal">
+									<img src="https://www.tarzkadin.com/wp-content/uploads/2020/01/en-guzel-cocuk-abiye-modelleri-300x169.jpg" alt="Kiz Çocuk Abiye Elbise 2023" width="300" height="169" />								</a>
+							</div>
+							<div class="detail">
+									<div class="safirCategoryMeta">
+						<a class="sfrCatClr cat11" href="https://www.tarzkadin.com/evlilik-hazirliklari/abiye-modelleri" data-wpel-link="internal">Abiye Modelleri</a>
+								<a class="sfrCatClr cat1" href="https://www.tarzkadin.com/moda" data-wpel-link="internal">Moda</a>
+					</div>
+									<div class="title">
+									<a href="https://www.tarzkadin.com/2017-cocuk-abiyeleri" data-wpel-link="internal">Kiz Çocuk Abiye Elbise 2023</a>
+								</div>
+											<div class="safirMetas">
+									<div class="meta date">02.01.2023</div>
+												<div class="meta comment">4</div>
+												<div class="meta hit">
+							16.661						</div>
+									</div>
+										</div>
+						</div>
+					</div>
+										<div class="post-container">
+						<div class="post">
+							<div class="safirthumb">
+								<a href="https://www.tarzkadin.com/pudra-rengi-elbiseye-hangi-renk-esarp-mi-dedi-birisi" data-wpel-link="internal">
+									<img src="https://www.tarzkadin.com/wp-content/uploads/2019/04/Adsız-tasarım-4-300x165.jpg" alt="Pudra Rengi Elbiseye Hangi Renk Eşarp Mı Dedi Birisi" width="300" height="169" />								</a>
+							</div>
+							<div class="detail">
+									<div class="safirCategoryMeta">
+						<a class="sfrCatClr cat2" href="https://www.tarzkadin.com/moda/kombinler" data-wpel-link="internal">Kombinler</a>
+								<a class="sfrCatClr cat1" href="https://www.tarzkadin.com/moda" data-wpel-link="internal">Moda</a>
+					</div>
+									<div class="title">
+									<a href="https://www.tarzkadin.com/pudra-rengi-elbiseye-hangi-renk-esarp-mi-dedi-birisi" data-wpel-link="internal">Pudra Rengi Elbiseye Hangi Renk Eşarp Mı Dedi Birisi</a>
+								</div>
+											<div class="safirMetas">
+									<div class="meta date">10.04.2020</div>
+												<div class="meta comment">3</div>
+												<div class="meta hit">
+							16.303						</div>
+									</div>
+										</div>
+						</div>
+					</div>
+								</div>
+		</div>
+		</div><div class="adsWidget sidebarWidget"><script type="rocketlazyloadscript" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- esnek -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-4644350651630449"
+     data-ad-slot="5485864159"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script type="rocketlazyloadscript">
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div>
+</aside>
+
+</div>
+<!--main-->
+<div style="clear:both"></div>
+</div><!--main-->
+
+<footer>
+	<div class="innerContainer top">
+		<div class="footerCols">
+				<div class="footerContainer">
+			<div class="about">
+				<div class="logo">
+					<a href="https://www.tarzkadin.com" data-wpel-link="internal"><img src="https://www.tarzkadin.com/wp-content/uploads/2016/03/tarzkadin1-1.png" alt="Tarz Kadın" title="Tarz Kadın - Anasayfa" width="250" height="60"  /></a>
+				</div>
+				<div class="copyright">Tarz Kadın Blogu</div>
+				<div class="footerSocial">
+					<ul class="safirSocial">
+	<li class="facebook">
+			<a rel="external nofollow noopener noreferrer" href="https://www.facebook.com/" title="Facebook" data-wpel-link="external" target="_blank"></a></li><li class="pinterest">
+			<a rel="external" href="#" title="Pinterest"></a></li><li class="instagram">
+			<a rel="external" href="#" title="Instagram"></a></li></ul>
+				</div>
+			</div>
+		</div>
+						<div class="footerContainer">
+			<div class="footermenu footermenu1">
+									<div class="footerHeading">
+						<div class="title">Kategoriler</div>
+					</div>
+								<nav>
+					<ul id="menu-kategoriler" class="menu"><li id="menu-item-42626" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-42626 color3"><a href="https://www.tarzkadin.com/elbise-modelleri" data-wpel-link="internal">Elbise Modelleri</a></li>
+<li id="menu-item-42628" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-42628 color12"><a href="https://www.tarzkadin.com/ev-dekorasyonu" data-wpel-link="internal">Ev Dekorasyonu</a></li>
+<li id="menu-item-42630" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-42630 color1813"><a href="https://www.tarzkadin.com/guzellik" data-wpel-link="internal">Güzellik</a></li>
+<li id="menu-item-42631" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-42631 color4"><a href="https://www.tarzkadin.com/sac-modelleri" data-wpel-link="internal">Saç Modelleri</a></li>
+<li id="menu-item-42633" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-42633 color14"><a href="https://www.tarzkadin.com/faydali-bilgiler" data-wpel-link="internal">Faydalı Bilgiler</a></li>
+<li id="menu-item-42629" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-42629 color8"><a href="https://www.tarzkadin.com/evlilik-hazirliklari" data-wpel-link="internal">Evlilik</a></li>
+</ul>				</nav>
+			</div>
+		</div>
+						<div class="footerContainer">
+			<div class="footerposts">
+									<div class="footerHeading">
+						<div class="title">Son Eklenenler</div>
+					</div>
+										<div class="posts">
+							<div class="post">
+					<a href="https://www.tarzkadin.com/ense-trasi-modelleri-erkek-2021" data-wpel-link="internal">
+						<div class="safirthumb">
+							<img src="https://www.tarzkadin.com/wp-content/uploads/2020/09/Ense-Trasi-Modelleri-Erkek-Stilleri-50x28.jpg" alt="Ense Traşı Modelleri Erkek Stilleri" width="50" height="50" />						</div>
+						<div class="detail">
+							<div class="title">
+								Ense Traşı Modelleri Erkek Stilleri							</div>
+						</div>
+					</a>
+				</div>
+								<div class="post">
+					<a href="https://www.tarzkadin.com/kafa-arkasi-duz-olanlar-icin-sac-modelleri-erkek" data-wpel-link="internal">
+						<div class="safirthumb">
+							<img src="https://www.tarzkadin.com/wp-content/uploads/2023/09/Kafa-Arkasi-Duz-Olanlar-Icin-Sac-Modelleri-Erkek-1-50x28.jpg" alt="Kafa Arkası Düz Olanlar İçin Saç Modelleri Erkek" width="50" height="50" />						</div>
+						<div class="detail">
+							<div class="title">
+								Kafa Arkası Düz Olanlar İçin Saç Modelleri Erkek							</div>
+						</div>
+					</a>
+				</div>
+								<div class="post">
+					<a href="https://www.tarzkadin.com/tas-kafa-sac-modeli" data-wpel-link="internal">
+						<div class="safirthumb">
+							<img src="https://www.tarzkadin.com/wp-content/uploads/2023/09/Tas-kafa-modelleri-50x28.png" alt="Tas Kafa Saç Modeli 2024" width="50" height="50" />						</div>
+						<div class="detail">
+							<div class="title">
+								Tas Kafa Saç Modeli 2024							</div>
+						</div>
+					</a>
+				</div>
+						</div>
+					</div>
+		</div>
+						<div class="footerContainer">
+			<div class="footermenu footermenu2">
+									<div class="footerHeading">
+						<div class="title">Bağlantılar</div>
+					</div>
+								<nav>
+					<ul id="menu-sol-menu-footer-1" class="menu"><li id="menu-item-42632" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-42632"><a href="https://www.tarzkadin.com/tarz-kadin" data-wpel-link="internal">Ana Sayda</a></li>
+<li id="menu-item-42624" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-42624"><a href="https://www.tarzkadin.com/reklam" data-wpel-link="internal">Reklam</a></li>
+<li id="menu-item-42625" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-42625"><a href="https://www.tarzkadin.com/iletisim" data-wpel-link="internal">Hakkımızda-İletişim</a></li>
+</ul>				</nav>
+			</div>
+		</div>
+				</div>
+	</div>
+
+</footer>
+		<div id="footerBottom">
+		<div class="bottomText">
+			Tarz Kadın Blogu		
+		</div>
+	</div>
+	
+<div class="safirTop"></div>
+
+
+</div><!--safirpage-->
+
+<link data-minify="1" rel='stylesheet' id='yarppRelatedCss-css' href='https://www.tarzkadin.com/wp-content/cache/min/1/wp-content/plugins/yet-another-related-posts-plugin/style/related.css?ver=1693615250'  media='all' />
+<script type="rocketlazyloadscript"  src='https://www.tarzkadin.com/wp-includes/js/comment-reply.min.js' id='comment-reply-js' defer></script>
+<script type="rocketlazyloadscript"  src='https://www.tarzkadin.com/wp-content/plugins/pinterest-pin-it-button-on-image-hover-and-post/js/main.js' id='wl-pin-main-js' defer></script>
+<script type="rocketlazyloadscript"  id='wl-pin-main-js-after'>window.addEventListener('DOMContentLoaded', function() {
+jQuery(document).ready(function(){jQuery(".is-cropped img").each(function(){jQuery(this).attr("style", "min-height: 120px;min-width: 100px;");});jQuery(".avatar").attr("style", "min-width: unset; min-height: unset;");});
+});</script>
+<script type='text/javascript' id='toc-front-js-extra'>
+/* <![CDATA[ */
+var tocplus = {"smooth_scroll":"1","visibility_show":"G\u00f6ster","visibility_hide":"Gizle","width":"Auto"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript"  src='https://www.tarzkadin.com/wp-content/plugins/table-of-contents-plus/front.min.js' id='toc-front-js' defer></script>
+<script type="rocketlazyloadscript"  src='https://www.tarzkadin.com/wp-content/themes/safirblog/lib/colorbox/jquery.colorbox-min.js' id='colorbox-js' defer></script>
+<script type="rocketlazyloadscript"  src='https://www.tarzkadin.com/wp-content/themes/safirblog/lib/owl-carousel/owl.carousel.min.js' id='sfrowl-js' defer></script>
+<script type="rocketlazyloadscript"  src='https://www.tarzkadin.com/wp-content/themes/safirblog/scripts/scripts.js' id='sfrscripts-js' defer></script>
+<script type="rocketlazyloadscript" defer  src='https://www.tarzkadin.com/wp-content/plugins/akismet/_inc/akismet-frontend.js' id='akismet-frontend-js'></script>
+
+
+</body>
+</html>
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me - Debug: cached@1694653156 -->
